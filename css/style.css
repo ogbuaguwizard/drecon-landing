@@ -117,8 +117,24 @@ h1, h2, h3, h4, h5 {
 
 .btn:hover {
     background: var(--brown-dark);
+    color: var(--emerald-dark);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn a:hover {
+    /*inherit the rest styles from .btn a:hover*/
+    color: inherit;
+}
+
+.btn a::after {
+    /*inherit the rest styles from nav a::after*/
+    background: var(--emerald-dark);
 }
 
 .btn-light {
@@ -161,7 +177,7 @@ header {
     gap: 15px;
 }
 
-.logo-icon {
+/* .logo-icon {
     width: 50px;
     height: 50px;
     background: var(--emerald-dark);
@@ -189,7 +205,7 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--brown-dark);
-}
+} */
 
 .logo-text {
     display: flex;
@@ -206,7 +222,7 @@ header {
 
 .logo-tagline {
     font-size: 0.7rem;
-    color: var(--emerald-light);
+    color: var(--brown-dark);
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: var(--font-subheading);
@@ -282,7 +298,7 @@ nav a:hover::after {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    background: linear-gradient(rgba(5, 8, 7, 0.7), rgba(5, 8, 7, 0.9)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1951&q=80') center/cover;
+    background: linear-gradient(rgba(5, 8, 7, 0.7), rgba(5, 8, 7, 0.9)), url('../images/estate3.jpg') center/cover;
 }
 
 .hero-content {
@@ -343,39 +359,35 @@ nav a:hover::after {
 /* Marquee Section */
 .marquee {
     background: var(--emerald-dark);
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     overflow: hidden;
     position: relative;
+    width: 100%;
     border-top: 1px solid rgba(176, 207, 203, 0.2);
     border-bottom: 1px solid rgba(176, 207, 203, 0.2);
 }
 
 .marquee-content {
     display: flex;
-    animation: marquee 10s linear infinite;
     white-space: nowrap;
+    will-change: transform;
 }
 
 .marquee-item {
-    padding: 0 40px;
-    font-size: 1.2rem;
+    padding: 0 25px;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
     color: var(--brown-light);
     font-family: var(--font-subheading);
     text-transform: uppercase;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .marquee-item i {
-    color: var(--brown-dark);
-    margin-right: 15px;
-    font-size: 1.4rem;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    margin-right: 10px;
+    font-size: 1em;
 }
 
 /* About CEO Section */
@@ -456,10 +468,130 @@ nav a:hover::after {
     text-transform: uppercase;
 }
 
+/* Experience Section */
+.experience {
+    padding: 6rem 0;
+    background: var(--black);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--emerald-dark);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-content {
+    position: relative;
+    background: var(--dark-grey);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(198, 164, 103, 0.3);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    border-color: var(--brown-dark);
+    transform: translateY(-5px);
+}
+
+.timeline-date {
+    font-family: var(--font-subheading);
+    font-weight: 600;
+    color: var(--brown-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    color: var(--brown-dark);
+    font-family: var(--font-subheading);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    color: var(--brown-dark);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.timeline-skills span {
+    background: var(--emerald-dark);
+    color: var(--gold-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--emerald-dark);
+    border: 4px solid var(--brown-dark);
+    border-radius: 50%;
+    top: 30px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -10px;
+}
+
 /* Services Section */
 .services {
     padding: 6rem 0;
-    background: var(--black);
+    background: var(--dark-grey);
 }
 
 .services-grid {
@@ -511,7 +643,7 @@ nav a:hover::after {
 /* Projects Section */
 .projects {
     padding: 6rem 0;
-    background: var(--dark-grey);
+    background: var(--black);
 }
 
 .projects-grid {
@@ -592,7 +724,7 @@ nav a:hover::after {
 /* Testimonials Section */
 .testimonials {
     padding: 6rem 0;
-    background: var(--black);
+    background: var(--dark-grey);
     position: relative;
 }
 
@@ -610,7 +742,7 @@ nav a:hover::after {
 }
 
 .testimonial {
-    background: var(--dark-grey);
+    background: var(--black);
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -708,7 +840,7 @@ nav a:hover::after {
 /* Stats Section */
 .stats {
     padding: 5rem 0;
-    background: linear-gradient(rgba(48, 82, 71, 0.8), rgba(5, 8, 7, 0.9)), url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover;
+    background: linear-gradient(rgba(48, 82, 71, 0.8), rgba(5, 8, 7, 0.9)), url('../images/skyscraper2.jpg') center/cover;
     text-align: center;
 }
 
@@ -922,6 +1054,32 @@ footer {
     .mobile-menu-btn {
         display: block;
     }
+
+    /* timeline */
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        text-align: left;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        padding-right: 25px;
+        text-align: left;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 70px;
+    }
+    
+    .timeline-content::after {
+        left: -10px;
+        top: 20px;
+    }
 }
 
 
@@ -1006,6 +1164,26 @@ footer {
         width: 100%;
         text-align: center;
     }
+
+    /* Testimonial adjustments */
+    .testimonial {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-content {
+        font-size: 1rem;
+    }
+    
+    .testimonial-content::before {
+        top: -40px;
+        left: -25px;
+        font-size: 4rem;
+    }
+    
+    .testimonial-author {
+        flex-direction: row;
+        align-items: center;
+    }
     
     /* Testimonial adjustments */
     .testimonial {
@@ -1031,6 +1209,14 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+
+    .marquee-content {
+        animation-duration: 40s !important; /* Slightly faster on mobile */
+    }
+    
+    .marquee-item {
+        padding: 0 15px;
     }
 }
 
@@ -1081,6 +1267,15 @@ footer {
 
     .logo-tagline {
         font-size: 0.5rem;
+    }
+
+    .testimonial {
+        padding: 1.2rem;
+    }
+    
+    .testimonial-author {
+        flex-direction: row;
+        align-items: flex-start;
     }
 
     .testimonial {

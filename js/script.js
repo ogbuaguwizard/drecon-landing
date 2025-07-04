@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize mobile menu
     initMobileMenu();
+
+    // Initialize marquee
+    initMarquee();
 });
 
 // Sticky header
@@ -102,11 +105,8 @@ function initTestimonialSlider() {
     let currentIndex = 0;
     let autoScrollInterval;
     
-    
 
     function updateSlider() {
-        // const offset = -currentIndex * 100;
-        // wrapper.style.transform = `translateX(${offset}%)`;
 
         // Get the width of the first testimonial (they should all be the same width)
         const testimonialWidth = testimonials[0].clientWidth;
@@ -205,6 +205,59 @@ function initMobileMenu() {
     });
 }
 
+// Marquee functionality
+function initMarquee() {
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (!marqueeContent) return;
+    
+    // Duplicate the items for seamless looping
+    const originalContent = marqueeContent.innerHTML;
+    marqueeContent.innerHTML = originalContent + originalContent;
+    
+    // Calculate total width and set animation
+    function updateMarqueeAnimation() {
+        const items = marqueeContent.querySelectorAll('.marquee-item');
+        let totalWidth = 0;
+        
+        items.forEach(item => {
+            totalWidth += item.offsetWidth;
+        });
+        
+        // Calculate animation duration (speed: 100px per second)
+        const duration = Math.max(30, totalWidth / 100);
+        
+        // Remove existing animation style
+        const existingStyle = document.getElementById('marquee-animation');
+        if (existingStyle) existingStyle.remove();
+        
+        // Create new animation style
+        const style = document.createElement('style');
+        style.id = 'marquee-animation';
+        style.textContent = `
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-${totalWidth / 2}px); }
+            }
+            .marquee-content {
+                animation: marquee ${duration}s linear infinite;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Pause on hover
+        marqueeContent.onmouseenter = () => {
+            marqueeContent.style.animationPlayState = 'paused';
+        };
+        marqueeContent.onmouseleave = () => {
+            marqueeContent.style.animationPlayState = 'running';
+        };
+    }
+    
+    // Initialize and update on resize
+    updateMarqueeAnimation();
+    window.addEventListener('resize', updateMarqueeAnimation);
+}
+
 // Scroll animations
 function initScrollAnimations() {
     const observerOptions = {
@@ -223,7 +276,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe all animated elements
-    document.querySelectorAll('.section-title, .about-container, .service-card, .project-card, .stat-item').forEach(el => {
+    document.querySelectorAll('.section-title, .about-container, .service-card, .project-card, .timeline, .stat-item').forEach(el => {
         observer.observe(el);
     });
 }
