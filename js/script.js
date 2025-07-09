@@ -5,17 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.querySelector('.hero-subtitle').classList.add('visible');
         document.querySelector('.typewriter h1').classList.add('visible');
-        document.querySelector('.hero-tagline').classList.add('visible');
         document.querySelector('.hero-buttons').classList.add('visible');
     }, 300);
     
     // Initialize typewriter effect
     const typewriterText = document.getElementById('typewriter-text');
     const texts = [
-        "Transforming Nigeria Through Strategic Development",
-        "Building Sustainable Communities Nationwide",
-        "Redeveloping Urban Spaces for Tomorrow",
-        "Creating Infrastructure That Lasts Generations"
+        "SULAIMAN ABU",
+        // "Building Sustainable Communities Nationwide",
+        // "Redeveloping Urban Spaces for Tomorrow",
+        // "Creating Infrastructure That Lasts Generations"
     ];
     let textIndex = 0;
     let charIndex = 0;
@@ -91,6 +90,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             
             // Close mobile menu if open
             document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('mobile-menu-btn').style.display = 'block';
         }
     });
 });
