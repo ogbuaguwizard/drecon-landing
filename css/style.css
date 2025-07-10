@@ -300,7 +300,7 @@ nav a:hover::after {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/profile3.jpg') center/cover;
+    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/fullprofile.jpg') center/cover;
 }
 
 .hero-content {
@@ -324,7 +324,7 @@ nav a:hover::after {
 
 .typewriter h1 {
     font-size: 4rem;
-    margin-top: 20rem;
+    margin-top: 15rem;
     margin-bottom: 1rem;
     color: var(--white);
     min-height: 100px;
@@ -1280,6 +1280,10 @@ footer {
     
     .logo-main {
         font-size: 1.2rem;
+    }
+
+    .typewriter h1 {
+        margin-top: 30rem;
     }
 
     .logo-tagline {
