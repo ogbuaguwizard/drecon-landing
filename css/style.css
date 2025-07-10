@@ -433,11 +433,12 @@ nav a:hover::after {
     color: var(--brown-light);
 }
 
-.ceo-signature {
+/* .ceo-signature {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-}
+    margin-bottom: 1rem;
+} */
 
 .signature {
     font-family: var(--font-heading);
