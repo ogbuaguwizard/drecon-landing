@@ -155,11 +155,13 @@ header {
     transition: var(--transition);
     background: rgba(5, 8, 7, 0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .header-scrolled {
     background: rgba(5, 8, 7, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     padding: 1rem 0;
 }
@@ -1278,5 +1280,378 @@ footer {
     .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
         padding-left: 10px;
         padding-right: 0;
+    }
+}
+
+
+
+
+
+/* Page Hero Section (for About, Contact, etc. pages) */
+.page-hero {
+    height: 100vh;
+    min-height: 400px; /* Minimum height for smaller screens */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* To account for fixed header */
+    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/profile2.jpg') center/cover; /* Use a relevant background image */
+    background-attachment: fixed; /* Optional: for parallax-like effect */
+}
+
+.page-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    text-align: center; /* Center content */
+    margin: 25rem auto 0; /* Center content block */
+    padding: 40px 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.page-hero-content h1 {
+    font-size: 3.5rem; /* Slightly smaller than main hero H1 */
+    margin-bottom: 1rem;
+    color: var(--white);
+    opacity: 0; /* For animation */
+    transform: translateY(30px); /* For animation */
+    transition: all 0.8s ease 0.4s;
+}
+
+.page-hero-content p.page-hero-subtitle {
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
+    color: var(--brown-light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto; /* Center subtitle */
+    opacity: 0; /* For animation */
+    transform: translateY(20px); /* For animation */
+    transition: all 0.8s ease 0.6s;
+}
+
+/* Animations for page hero content */
+.page-hero-content h1.visible,
+.page-hero-content p.page-hero-subtitle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* About Section Layout */
+.about-section {
+    padding: 6rem 0;
+    background: var(--dark-grey); /* Or var(--black) depending on desired contrast */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 4rem; /* Space between professional and personal sections */
+}
+
+@media (min-width: 992px) { /* Two columns for larger screens */
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about-content {
+    padding: 2.5rem;
+    background: var(--medium-grey);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(48, 82, 71, 0.3);
+    opacity: 0; /* For animation */
+    transform: translateY(50px); /* For animation */
+    transition: all 0.8s ease;
+}
+
+/* Delay for the second column to appear slightly after the first */
+.about-content.personal-section {
+    transition-delay: 0.2s;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--brown-light);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0; /* Remove margin from last paragraph */
+}
+
+.about-content .section-title {
+    margin-bottom: 2rem; /* Adjust title margin for inner sections */
+    font-size: 2rem;
+    text-align: left; /* Align title to left within each column */
+    transform: translateY(0); /* Override global section-title animation */
+    opacity: 1; /* Override global section-title animation */
+    position: relative; /* Ensure relative positioning for ::after */
+}
+
+/* Line under inner section titles */
+.about-content .section-title::after {
+    left: 0; /* Align line to left */
+    transform: translateX(0); /* Remove center transform */
+}
+
+
+/* Contact CTA on About page */
+.contact-cta {
+    padding: 4rem 0;
+    background: var(--black);
+    text-align: center;
+}
+
+.contact-cta .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-cta p {
+    font-size: 1.1rem;
+    color: var(--brown-light);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0; /* For animation */
+    transform: translateY(30px); /* For animation */
+    transition: all 0.8s ease 0.2s;
+}
+
+.contact-cta .btn {
+    opacity: 0; /* For animation */
+    transform: translateY(30px); /* For animation */
+    transition: all 0.8s ease 0.4s;
+}
+
+/* Responsive adjustments for about page hero */
+@media (max-width: 768px) {
+    .page-hero {
+        height: 100vh;
+        min-height: 300px;
+    }
+    .page-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .page-hero-content p.page-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+    }
+    .about-content .section-title {
+        font-size: 1.8rem;
+    }
+    .about-content p {
+        font-size: 0.95rem;
+    }
+    .contact-cta .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero-content h1 {
+        font-size: 2rem;
+    }
+    .page-hero-content p.page-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .about-content .section-title {
+        font-size: 1.5rem;
+    }
+    .about-content p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* --- CSR Specific Content Styling (Restructured) --- */
+.csr-section {
+    padding: 80px 0;
+    text-align: center; /* Center align section title and intro paragraph */
+}
+
+.csr-section .section-title {
+    margin-bottom: 2rem;
+}
+
+.csr-section .intro-paragraph {
+    max-width: 800px;
+    margin: 0 auto 4rem auto; /* Center and add space below intro */
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    text-align: left;
+}
+
+.csr-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between pillar items */
+    margin-bottom: 4rem; /* Space before the legacy signature */
+}
+
+.csr-pillar-item {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light); /* Or a slightly more pronounced shadow */
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px); /* Initial state for animation */
+}
+
+.csr-pillar-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.csr-pillar-item:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-hover); /* Stronger shadow on hover */
+}
+
+.pillar-icon {
+    font-size: 3.5rem; /* Larger icons */
+    color: var(--color-primary); /* Use your brand's primary color */
+    margin-bottom: 1.5rem;
+}
+
+.pillar-title {
+    font-family: var(--font-primary);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+}
+
+.csr-pillar-item p {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0; /* Remove default paragraph margin */
+    text-align: left;
+}
+
+/* Existing legacy-signature styling */
+.legacy-signature {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    text-align: right;
+}
+
+.legacy-signature p {
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: var(--color-grey);
+}
+
+.legacy-signature .signature-name {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 0.2rem;
+}
+
+.legacy-signature .signature-title {
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+/* --- CSR Gallery Styling --- */
+#csr-gallery {
+    padding: 80px 0;
+    background-color: var(--color-light-grey-bg); /* Light background for contrast */
+}
+
+#csr-gallery .section-title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item .image-caption {
+    padding: 15px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .csr-section {
+        padding: 60px 0;
+    }
+
+    .csr-section .intro-paragraph {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .csr-pillars-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 20px;
+    }
+
+    .pillar-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .pillar-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
     }
 }
