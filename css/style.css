@@ -300,7 +300,7 @@ nav a:hover::after {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/fullprofile.jpg') center/cover;
+    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/halfprofile.jpg') center/cover;
 }
 
 .hero-content {
@@ -1238,6 +1238,9 @@ footer {
 }
 
 @media (max-width: 576px) {
+    .hero {
+        background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/fullprofile.jpg') center/cover;
+    }
     .typewriter h1 {
         font-size: 1.8rem;
     }
