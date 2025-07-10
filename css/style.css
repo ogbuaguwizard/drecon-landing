@@ -292,7 +292,6 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-    /* height: 100vh; */
     height: auto;
     min-height: 100vh;
     display: flex;
@@ -301,13 +300,15 @@ nav a:hover::after {
     overflow: hidden;
     padding-top: 80px;
     background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/halfprofile.jpg') center/cover;
+    background-attachment: fixed;
 }
 
 .hero-content {
     max-width: 800px;
     position: relative;
     z-index: 2;
-    padding: 40px 0
+    padding: 40px 0;
+    margin-top: 15rem;
 }
 
 .hero-subtitle {
@@ -324,7 +325,6 @@ nav a:hover::after {
 
 .typewriter h1 {
     font-size: 4rem;
-    margin-top: 15rem;
     margin-bottom: 1rem;
     color: var(--white);
     min-height: 100px;
@@ -376,65 +376,63 @@ nav a:hover::after {
     font-size: 1em;
 }
 
-/* About CEO Section */
+/* About Section */
 .about-ceo {
     padding: 6rem 0;
     background: var(--dark-grey);
-    position: relative;
     overflow: hidden;
 }
 
 .about-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
-/* .ceo-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+.ceo-content h2 {
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
-} */
+    color: var(--brown-dark);
+    text-align: center;
+}
+
+.ceo-content h3 {
+    font-family: var(--font-subheading);
+    font-size: 1.2rem;
+    color: var(--emerald-light);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
 
 .ceo-image {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    position: relative;
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 50px; /* Set a fixed width */
+    height: 50px;
     background: linear-gradient(45deg, var(--emerald-dark), var(--black));
-    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 1rem;
+    float: left; /* Float the image to the left */
+
 }
 
 .ceo-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-}
-
-.ceo-header-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.3rem;
-    color: var(--brown-dark);
-}
-
-.ceo-header-content h3 {
-    font-family: var(--font-subheading);
-    font-size: 1.1rem;
-    color: var(--emerald-light);
-    font-weight: 400;
-    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .ceo-content p {
@@ -442,52 +440,16 @@ nav a:hover::after {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--brown-light);
+    text-align: justify;
 }
 
-/* Responsive adjustments */
-@media (max-width: 576px) {
-    .about-container {
-        padding: 0 1rem;
-    }
-    .ceo-header {
-        gap: 1rem;
-    }
-    .ceo-image {
-        width: 60px;
-        height: 60px;
-    }
-    .ceo-header-content h2 {
-        font-size: 1.3rem;
-    }
-    .ceo-header-content h3 {
-        font-size: 0.9rem;
-    }
-    .ceo-content p {
-        font-size: 0.95rem;
-    }
+.ceo-content a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+    text-align: center;
 }
-
-/* .ceo-signature {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-} */
-
-/* .signature {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--brown-dark);
-    margin-bottom: 0.5rem;
-}
-
-.signature-title {
-    font-family: var(--font-subheading);
-    color: var(--emerald-light);
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-} */
 
 /* Experience Section */
 .experience {
@@ -1108,15 +1070,6 @@ footer {
     .typewriter h1 {
         font-size: 3rem;
     }
-    
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .ceo-image {
-        height: 400px;
-    }
 
     nav ul {
         gap: 1rem;
@@ -1240,7 +1193,13 @@ footer {
 @media (max-width: 576px) {
     .hero {
         background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/fullprofile.jpg') center/cover;
+        background-attachment: fixed;
     }
+
+    .hero-content {
+        margin-top: 25rem;
+    }
+
     .typewriter h1 {
         font-size: 1.8rem;
     }
@@ -1253,9 +1212,6 @@ footer {
         font-size: 2.5rem;
     }
     
-    .ceo-image {
-        height: 300px;
-    }
     /* Mobile-specific adjustments */
     .logo-icon {
         width: 35px;
@@ -1283,10 +1239,6 @@ footer {
     
     .logo-main {
         font-size: 1.2rem;
-    }
-
-    .typewriter h1 {
-        margin-top: 30rem;
     }
 
     .logo-tagline {
@@ -1331,14 +1283,14 @@ footer {
 
 /* Page Hero Section (for About, Contact, etc. pages) */
 .page-hero {
-    height: 100vh;
-    min-height: 400px; /* Minimum height for smaller screens */
+    height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding-top: 80px; /* To account for fixed header */
-    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/profile2.jpg') center/cover; /* Use a relevant background image */
+    background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/profile3.jpg') center/cover; /* Use a relevant background image */
     background-attachment: fixed; /* Optional: for parallax-like effect */
 }
 
@@ -1346,9 +1298,9 @@ footer {
     max-width: 800px;
     position: relative;
     z-index: 2;
-    text-align: center; /* Center content */
-    margin: 25rem auto 0; /* Center content block */
-    padding: 40px 0;
+    text-align: center;
+    margin: 25rem auto 0;
+    padding: 0;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -1475,10 +1427,6 @@ footer {
 
 /* Responsive adjustments for about page hero */
 @media (max-width: 768px) {
-    .page-hero {
-        height: 100vh;
-        min-height: 300px;
-    }
     .page-hero-content h1 {
         font-size: 2.5rem;
     }
@@ -1501,8 +1449,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .page-hero-content {
+        margin: 30rem auto 0;
+    }
     .page-hero-content h1 {
         font-size: 2rem;
+
     }
     .page-hero-content p.page-hero-subtitle {
         font-size: 0.9rem;
