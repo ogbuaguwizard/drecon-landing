@@ -1051,7 +1051,7 @@ footer {
     }
 
     .hero-content {
-        margin-top: 15rem;
+        margin-top: 10rem;
     }
 
     .typewriter h1 {
@@ -1140,7 +1140,7 @@ footer {
     overflow: hidden;
     padding-top: 80px; /* To account for fixed header */
     background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/profile3.jpg') center/cover; /* Use a relevant background image */
-    background-attachment: fixed; /* Optional: for parallax-like effect */
+    background-attachment: fixed;
 }
 
 .page-hero-content {
@@ -1148,7 +1148,7 @@ footer {
     position: relative;
     z-index: 2;
     text-align: center;
-    margin: 25rem auto 0;
+    margin: 20rem auto 0;
     padding: 0;
     /* backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px); */
@@ -1299,7 +1299,7 @@ footer {
 
 @media (max-width: 480px) {
     .page-hero-content {
-        margin: 30rem auto 0;
+        margin: 25rem auto 0;
     }
     .page-hero-content h1 {
         font-size: 2rem;
