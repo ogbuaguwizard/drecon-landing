@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Jedira';
     src: url('../fonts/jedira-regular.ttf') format('truetype'),
@@ -25,18 +26,6 @@
     
     /* Animation */
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    /* CSR Specific Colors/Shadows (adjust based on overall palette) */
-    --color-primary: var(--emerald-dark);
-    --color-heading: var(--white);
-    --color-text: var(--brown-light);
-    --color-grey: var(--emerald-light);
-    --color-light-grey-bg: var(--dark-grey);
-    --color-white: var(--medium-grey); /* Used for CSR cards background */
-    --color-border: rgba(176, 207, 203, 0.2);
-
-    --shadow-light: 0 5px 15px rgba(0,0,0,0.2);
-    --shadow-hover: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 * {
@@ -120,6 +109,7 @@ h1, h2, h3, h4, h5 {
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
@@ -139,10 +129,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn a:hover {
+    /*inherit the rest styles from .btn a:hover*/
     color: inherit;
 }
 
 .btn a::after {
+    /*inherit the rest styles from nav a::after*/
     background: var(--emerald-dark);
 }
 
@@ -187,6 +179,36 @@ header {
     align-items: center;
     gap: 15px;
 }
+
+/* .logo-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--emerald-dark);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-icon::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--brown-dark);
+    border-radius: 50%;
+}
+
+.logo-icon::after {
+    content: 'D';
+    position: absolute;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+} */
 
 .logo-text {
     display: flex;
@@ -390,18 +412,17 @@ nav a:hover::after {
 
 .ceo-image {
     position: relative;
-    border-radius: 5px;
+    border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    width: 50px; /* Set a fixed width */
-    height: 50px;
+    width: 100px; /* Set a fixed width */
+    height: 100px;
     background: linear-gradient(45deg, var(--emerald-dark), var(--black));
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
     float: left; /* Float the image to the left */
-
 }
 
 .ceo-image img {
@@ -428,6 +449,58 @@ nav a:hover::after {
     margin-right: auto;
     max-width: 200px;
     text-align: center;
+}
+
+/* Services Section */
+.services {
+    padding: 6rem 0;
+    background: var(--dark-grey);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background: var(--medium-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(48, 82, 71, 0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--emerald-dark);
+    box-shadow: 0 15px 40px rgba(48, 82, 71, 0.2);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--brown-dark);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.service-card p {
+    color: var(--brown-light);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 /* Projects Section */
@@ -1053,6 +1126,10 @@ footer {
     }
 }
 
+
+
+
+
 /* Page Hero Section (for About, Contact, etc. pages) */
 .page-hero {
     height: auto;
@@ -1078,7 +1155,7 @@ footer {
 }
 
 .page-hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Slightly smaller than main hero H1 */
     margin-bottom: 1rem;
     color: var(--white);
     opacity: 0; /* For animation */
@@ -1239,6 +1316,8 @@ footer {
     }
 }
 
+
+
 /* --- CSR Specific Content Styling (Restructured) --- */
 .csr-section {
     padding: 80px 0;
@@ -1293,7 +1372,7 @@ footer {
 }
 
 .pillar-title {
-    font-family: var(--font-heading); /* Changed to font-heading */
+    font-family: var(--font-primary);
     font-size: 1.7rem;
     font-weight: 600;
     color: var(--color-heading);
@@ -1301,7 +1380,7 @@ footer {
 }
 
 .csr-pillar-item p {
-    font-family: var(--font-body); /* Changed to font-body */
+    font-family: var(--font-secondary);
     font-size: 1rem;
     line-height: 1.7;
     color: var(--color-text);
@@ -1324,7 +1403,7 @@ footer {
 }
 
 .legacy-signature .signature-name {
-    font-family: var(--font-heading); /* Changed to font-heading */
+    font-family: var(--font-primary);
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-heading);
@@ -1332,7 +1411,7 @@ footer {
 }
 
 .legacy-signature .signature-title {
-    font-family: var(--font-subheading); /* Changed to font-subheading */
+    font-family: var(--font-secondary);
     font-size: 0.9rem;
     color: var(--color-text);
 }
@@ -1351,17 +1430,18 @@ footer {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
 
 .gallery-item {
-    position: relative;
-    overflow: hidden;
+    background-color: var(--color-white);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
     opacity: 0;
-    transform: translateY(30px); /* Initial state for animation */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .gallery-item.visible {
@@ -1369,48 +1449,52 @@ footer {
     transform: translateY(0);
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 250px; /* Fixed height for consistency */
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item:hover img {
     transform: scale(1.05);
 }
 
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--white);
+.gallery-item .image-caption {
     padding: 15px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    text-align: left;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-white);
 }
 
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .csr-section {
+        padding: 60px 0;
+    }
 
-.gallery-overlay h3 {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: var(--brown-dark);
-}
+    .csr-section .intro-paragraph {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
 
-.gallery-overlay p {
-    font-size: 0.9rem;
-    color: var(--emerald-light);
+    .csr-pillars-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 20px;
+    }
+
+    .pillar-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .pillar-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
 }
