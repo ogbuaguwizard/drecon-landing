@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-app-title" content="Sulaimanabu" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+
+    <title>Sulaiman Abu | About My Work & Expertise</title>
+    <meta name="description" content="Explore Sulaiman Abu's professional journey, including past and current work experience, and key specialties in real estate development.">
+    <meta name="keywords" content="Sulaiman Abu experience, real estate developer experience, past work, current work, real estate specialties, property development career, Nigerian real estate expert">
+    <meta name="author" content="Sulaiman Abu">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://www.sulaimanabu.com/about-work.html">
+    
+    <meta property="og:title" content="Sulaiman Abu | About My Work & Expertise">
+    <meta property="og:description" content="Explore Sulaiman Abu's professional journey, including past and current work experience, and key specialties in real estate development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sulaimanabu.com/about-work.html">
+    <meta property="og:image" content="https://www.sulaimanabu.com/images/profile.jpg">
+    <meta property="og:image:alt" content="Sulaiman Abu - Real Estate Developer">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SulaimanAbuDev">
+    <meta name="twitter:creator" content="@Sulaimanabu">
+    <meta name="twitter:title" content="Sulaiman Abu | About My Work & Expertise">
+    <meta name="twitter:description" content="Explore Sulaiman Abu's professional journey, including past and current work experience, and key specialties in real estate development.">
+    <meta name="twitter:image" content="https://www.sulaimanabu.com/images/profile.jpg">
+    <meta name="twitter:image:alt" content="Sulaiman Abu - Real Estate Developer">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page Hero Section */
+        /* .page-hero {
+            background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('images/profile3.jpg') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .page-hero p {
+            font-family: var(--font-body);
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--emerald-light);
+        } */
+
+        /* Section Titles */
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--brown-dark); /* Accent line */
+        }
+
+        /* Experience Detail - Card Layout */
+        .experience-detail {
+            padding: 60px 0;
+            background-color: var(--black);
+            margin-bottom: 30px;
+            border-radius: 8px;
+            /* Removed large box-shadow to fit dark theme, opt for subtle border */
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background-color: var(--medium-grey); /* Slightly lighter dark grey for card background */
+            border: 1px solid var(--dark-grey); /* Subtle border for definition */
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Darker shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .experience-card .duration {
+            font-size: 0.9em;
+            color: var(--emerald-light); /* Lighter emerald for date */
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .experience-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6em;
+            color: var(--brown-dark); /* Brown accent for company name */
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            font-family: var(--font-subheading);
+            font-size: 1.1em;
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .experience-card .location {
+            font-size: 0.9em;
+            color: var(--emerald-light);
+            margin-bottom: 15px;
+        }
+
+        .experience-card .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .experience-card .skills-list span {
+            background-color: var(--emerald-dark); /* Dark emerald for skill tags */
+            color: var(--brown-light); /* Light brown for skill text */
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .experience-card p {
+            font-family: var(--font-body);
+            font-size: 1em;
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            padding: 60px 0;
+            background-color: var(--dark-grey); /* Dark grey background for contrast */
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .specialty-item {
+            background-color: var(--medium-grey); /* Consistent card background */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .specialty-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .specialty-item i {
+            font-size: 3em;
+            color: var(--brown-dark); /* Brown accent for icons */
+            margin-bottom: 20px;
+        }
+
+        .specialty-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5em;
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .specialty-item p {
+            font-family: var(--font-body);
+            font-size: 0.95em;
+            color: var(--emerald-light); /* Lighter emerald for description */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em;
+            }
+
+            .experience-grid,
+            .specialties-grid {
+                grid-template-columns: 1fr; /* Single column layout on small screens */
+            }
+        }
+    </style>
+    </head>
+<body class="subpage">
+    <header id="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <div class="logo-main">SULAIMAN ABU</div>
+                        <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-work.html" class="active">About Work</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="esg.html">ESG</a></li>
+                        <li><a href="mentorship.html">Mentorship</a></li>
+                        <!-- <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li> -->
+                    </ul>
+                    <div class="nav-btn-container">
+                        <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-work.html" class="active">About Work</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="esg.html">ESG</a></li>
+                    <li><a href="mentorship.html">Mentorship</a></li>
+                    <!-- <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li> -->
+                </ul>
+                <div class="mobile-menu-btn-container">
+                    <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
+                </div>
+            </div>
+        </header>
+
+    <main>
+        <section class="page-hero about-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>My Work & Experience</h1>
+                    <p class="page-hero-subtitle">A comprehensive overview of my professional journey, expertise, and contributions to the real estate sector.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-detail" id="current-work">
+            <div class="container">
+                <h2 class="section-title">Current Work</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="duration">Jan 2021 - Present</div>
+                        <h3>Cruxstone Development & Investment Ltd.</h3>
+                        <h4>Head, Business Development</h4>
+                        <div class="location">Lagos State, Nigeria</div>
+                        <div class="skills-list">
+                            <span>Project Management</span>
+                            <span>Financial Analysis</span>
+                            <span>Account Management</span>
+                            <span>Sales Strategy</span>
+                            <span>Strategic Thinking</span>
+                            <span>Lead Generation</span>
+                        </div>
+                        <p>As Head of Business Development, I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="duration">Nov 2021 - Present</div>
+                        <h3>Gapstone Developers</h3>
+                        <h4>Head, Business Development and Sales</h4>
+                        <div class="location">Lekki Peninsula scheme 1, Lagos Nigeria</div>
+                        <div class="skills-list">
+                            <span>Project Management</span>
+                            <span>Financial Analysis</span>
+                            <span>Account Management</span>
+                            <span>Sales Strategy</span>
+                            <span>Strategic Thinking</span>
+                            <span>Lead Generation</span>
+                        </div>
+                        <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-detail" id="past-work">
+            <div class="container">
+                <h2 class="section-title">Past Work</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="duration">Jan 2020 - Jan 2021</div>
+                        <h3>Cruxstone Development & Investment Ltd.</h3>
+                        <h4>Senior Investment Advisor</h4>
+                        <div class="location">Nigeria</div>
+                        <div class="skills-list">
+                            <span>Lead Generation</span>
+                            <span>Sales Prospecting</span>
+                            <span>Sales Operations</span>
+                            <span>Project Management</span>
+                        </div>
+                        <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="duration">Dec 2018 - Dec 2019</div>
+                        <h3>Brookstone Property</h3>
+                        <h4>Sales Executive</h4>
+                        <div class="location">Ikoyi, Lagos</div>
+                        <div class="skills-list">
+                            <span>Data Analysis</span>
+                            <span>Sales</span>
+                            <span>Lead Generation</span>
+                            <span>Sales Prospecting</span>
+                            <span>Sales Operations</span>
+                        </div>
+                        <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <div class="duration">Jul 2014 - Nov 2016</div>
+                        <h3>Wole Ogungbola & Co</h3>
+                        <h4>Head of Agency</h4>
+                        <div class="location">Lagos, Nigeria</div>
+                        <div class="skills-list">
+                            <span>Data Analysis</span>
+                            <span>Sales</span>
+                            <span>Lead Generation</span>
+                            <span>Sales Prospecting</span>
+                            <span>Sales Operations</span>
+                        </div>
+                        <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="specialties" id="specialties">
+            <div class="container">
+                <h2 class="section-title">My Specialties</h2>
+                <div class="specialties-grid">
+                    <div class="specialty-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Project Conceptualization</h3>
+                        <p>Turning visionary ideas into tangible, profitable real estate developments.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-city"></i>
+                        <h3>Urban Redevelopment</h3>
+                        <p>Transforming existing urban spaces into vibrant and sustainable communities.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-handshake-alt"></i>
+                        <h3>Joint Venture Structuring</h3>
+                        <p>Creating mutually beneficial partnerships for complex development projects.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Financial Projections & Analysis</h3>
+                        <p>Developing robust financial models to ensure project viability and maximize returns.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-vector-square"></i>
+                        <h3>Design Creation & Oversight</h3>
+                        <p>Guiding architectural design to blend aesthetics with functionality and market appeal.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Real Estate Investment Advisory</h3>
+                        <p>Providing strategic advice for high-yield property investments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="logo-container" style="margin-bottom: 1.5rem;">
+                        <div class="logo-text">
+                            <div class="logo-main">SULAIMAN ABU</div>
+                            <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sulaiman-abu-57102436?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/sulaimanabu?s=21&t=c7f2SqlR5x4ULl6hACEUVw" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/share/1C8fbYHyWo/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iman_d_first?igsh=MWN5dzhyYjlqNHpucg%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-work.html">About Work</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="esg.html">ESG</a></li>
+                        <li><a href="mentorship.html">Mentorship</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact" id="contact">
+                    <h3>Contact Me</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                    <p><i class="fas fa-phone"></i> +2348022396938</p>
+                    <p><i class="fas fa-envelope"></i> talk@sulaimanabu.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sulaiman Abu | Real Estate Developer. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
