@@ -723,7 +723,7 @@ nav a:hover::after {
     line-height: 1.4;
     position: relative;
     padding: 0 20px; 
-    color: var(--brown-light);
+    color: var(--white);
 }
 
 .quote-section blockquote::before,
