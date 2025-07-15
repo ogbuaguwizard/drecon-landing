@@ -337,7 +337,7 @@ nav a:hover::after {
     font-size: 3rem;
     /* margin-bottom: 1rem; */
     color: var(--white);
-    min-height: 100px;
+    min-height: 50px;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease 0.4s;
