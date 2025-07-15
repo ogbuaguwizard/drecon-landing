@@ -679,15 +679,15 @@ nav a:hover::after {
 
 /* Quote Section Styles */
 .quote-section {
-    background: url('../images/halftransprofile3.png') center/cover no-repeat; /* Ensure the path is correct */
+    background: url('../images/halftransprofile3.png') center/cover no-repeat;
     position: relative;
     min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px; /* Add padding for smaller screens */
-    color: #fff; /* Default text color for the section */
-    overflow: hidden; /* Important for background image containment */
+    padding: 40px 20px;
+    color: #fff;
+    overflow: hidden;
 }
 
 .quote-section::before {
@@ -697,22 +697,22 @@ nav a:hover::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay for better text readability */
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1; 
 }
 
 .quote-overlay {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.4); /* Slightly transparent background for the quote box */
-    padding: 3rem 3.5rem; /* More generous padding */
-    border-radius: 15px; /* Softer rounded corners */
-    max-width: 800px; /* Max width for the quote box */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem 3.5rem;
+    border-radius: 15px;
+    max-width: 800px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  */
     /* backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .quote-section blockquote {
@@ -723,7 +723,7 @@ nav a:hover::after {
     line-height: 1.4;
     position: relative;
     padding: 0 20px; 
-    color: var(--white);
+    color: var(--brown-light);
 }
 
 .quote-section blockquote::before,
