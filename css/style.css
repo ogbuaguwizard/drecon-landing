@@ -40,7 +40,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: var(--white);
-    background-image: radial-gradient(circle at 10% 20%, rgba(48, 82, 71, 0.1) 0%, rgba(5, 8, 7, 1) 80%);
+    /* background-image: radial-gradient(circle at 10% 20%, rgba(48, 82, 71, 0.1) 0%, rgba(5, 8, 7, 1) 80%); */
     position: relative;
     scroll-behavior: smooth;
 }
@@ -120,7 +120,7 @@ h3, h4, h5 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.5rem;
+    font-size: 1rem;
     font-family: var(--font-subheading);
 }
 
@@ -593,58 +593,6 @@ nav a:hover::after {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
-}
-
-/* Services Section */
-.services {
-    padding: 6rem 0;
-    background: var(--dark-grey);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.service-card {
-    background: var(--medium-grey);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: var(--transition);
-    position: relative;
-    padding: 2.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border: 1px solid rgba(48, 82, 71, 0.3);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--emerald-dark);
-    box-shadow: 0 15px 40px rgba(48, 82, 71, 0.2);
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--brown-dark);
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-}
-
-.service-card p {
-    color: var(--brown-light);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.7;
 }
 
 /* Projects Section */
