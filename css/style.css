@@ -679,7 +679,7 @@ nav a:hover::after {
 
 /* Quote Section Styles */
 .quote-section {
-    background: url('../images/profile3.jpg') center/cover no-repeat; /* Ensure the path is correct */
+    background: url('../images/halftransprofile3.png') center/cover no-repeat; /* Ensure the path is correct */
     position: relative;
     min-height: 400px;
     display: flex;
@@ -697,8 +697,8 @@ nav a:hover::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better text readability */
-    z-index: 1; /* Ensure overlay is above the image but below the content */
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay for better text readability */
+    z-index: 1; 
 }
 
 .quote-overlay {
@@ -789,7 +789,7 @@ nav a:hover::after {
     .quote-section blockquote::before,
     .quote-section blockquote::after {
         font-size: 3rem;
-        top: -15px;
+        /* top: -15px; */
         bottom: -15px;
     }
     .quote-author {
@@ -814,7 +814,7 @@ nav a:hover::after {
     .quote-section blockquote::before,
     .quote-section blockquote::after {
         font-size: 2.5rem;
-        top: -10px;
+        /* top: -10px; */
         bottom: -10px;
     }
     .quote-author {
