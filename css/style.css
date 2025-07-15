@@ -330,6 +330,7 @@ nav a:hover::after {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease 0.2s;
+    width: 50%;
 }
 
 .typewriter h1 {
@@ -1266,6 +1267,7 @@ footer {
     .hero {
         background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('../images/fullprofile.jpg') center/cover;
         /* background-attachment: fixed; */
+        width: 100%;
     }
 
     .hero-content {
