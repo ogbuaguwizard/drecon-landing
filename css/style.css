@@ -324,7 +324,7 @@ nav a:hover::after {
     font-family: var(--font-subheading);
     font-size: 1rem;
     color: var(--brown-dark);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 3px;
     margin-bottom: 1.5rem;
     opacity: 0;
@@ -679,7 +679,7 @@ nav a:hover::after {
 
 /* Quote Section Styles */
 .quote-section {
-    background: url('../images/halftransprofile3.png') center/cover no-repeat;
+    background: url('../images/halftransprofile5.png') center/cover no-repeat;
     position: relative;
     min-height: 400px;
     display: flex;
