@@ -322,7 +322,7 @@ nav a:hover::after {
 
 .hero-subtitle {
     font-family: var(--font-subheading);
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--brown-dark);
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -334,7 +334,7 @@ nav a:hover::after {
 
 .typewriter h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     color: var(--white);
     min-height: 100px;
     opacity: 0;
