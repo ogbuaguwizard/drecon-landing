@@ -38,32 +38,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Section Titles */
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--white);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--brown-dark); /* Accent line */
-        }
-
         /* ESG Section Specific Styles */
         .esg-section {
             padding: 60px 0;
-            background-color: var(--black);
+            background-color: var(--brown-light);
         }
 
         .esg-grid {
@@ -74,43 +52,43 @@
         }
 
         .esg-item {
-            background-color: var(--medium-grey);
-            border: 1px solid var(--dark-grey);
+            background-color: var(--white);
+            /* border: 1px solid var(--dark-grey); */
             border-radius: 8px;
             padding: 30px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            /* box-shadow: 0 4px 10px rgba(0,0,0,0.3); */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .esg-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            /* box-shadow: 0 8px 20px rgba(0,0,0,0.5); */
         }
 
         .esg-icon {
             font-size: 3.5em;
-            color: var(--brown-dark);
+            color: var(--emerald-dark);
             margin-bottom: 20px;
         }
 
         .esg-item h3 {
-            font-family: var(--font-heading);
+            /* font-family: var(--font-heading); */
             font-size: 1.6em;
-            color: var(--white);
+            color: var(--emerald-dark);
             margin-top: 0;
             margin-bottom: 15px;
         }
 
         .esg-item p {
-            font-family: var(--font-body);
+            /* font-family: var(--font-body); */
             font-size: 1em;
-            color: var(--emerald-light);
+            color: var(--black);
             margin-bottom: 0;
         }
 
         .esg-text {
-            background-color: var(--dark-grey);
+            background-color: var(--brown-light);
             border-left: 5px solid var(--emerald-dark);
             padding: 30px;
             border-radius: 8px;
@@ -119,7 +97,7 @@
 
         .esg-text p {
             font-size: 1.1em;
-            color: var(--white);
+            color: var(--black);
             line-height: 1.8;
             margin-bottom: 0;
         }
@@ -248,9 +226,7 @@
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
                         <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact" id="contact">

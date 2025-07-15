@@ -17,7 +17,7 @@
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="https://www.sulaimanabu.com/about-work.html">
-    
+
     <meta property="og:title" content="Sulaiman Abu | About My Work & Expertise">
     <meta property="og:description" content="Explore Sulaiman Abu's professional journey, including past and current work experience, and key specialties in real estate development.">
     <meta property="og:type" content="website">
@@ -38,39 +38,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Page Hero Section */
-        /* .page-hero {
-            background: linear-gradient(rgba(5, 8, 7, 0.4), rgba(5, 8, 7, 0.6)), url('images/profile3.jpg') center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 40px;
+        /* Work Experience Section */
+        .work-experience {
+            padding: 60px 0;
+            background-color: var(--emerald-dark);
         }
 
-        .page-hero h1 {
-            font-family: var(--font-heading);
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            color: var(--white);
-        }
-
-        .page-hero p {
-            font-family: var(--font-body);
-            font-size: 1.2em;
-            max-width: 800px;
+        .work-content {
+            max-width: 900px;
             margin: 0 auto;
-            color: var(--emerald-light);
-        } */
+            font-family: var(--font-body);
+            line-height: 1.8;
+            color: var(--black);
+        }
 
-        /* Section Titles */
+        .work-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5em;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .work-content h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--brown-dark);
+        }
+
+        .work-content h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            color: var(--white);
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* NEW STYLES FOR COMBINED ROLE INFO */
+        .work-content .job-header {
+            margin-top: 30px; /* Space above each job entry */
+            margin-bottom: 10px; /* Space below the header */
+        }
+
+        .work-content .job-header h4 {
+            font-family: var(--font-subheading);
+            font-size: 1.3em;
+            color: var(--brown-dark); /* Keep company name in this color */
+            display: inline; /* Keep it on the same line as the meta */
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-right: 10px; /* Space between company and role meta */
+        }
+
+        .work-content .job-header .role-meta {
+            font-style: normal; /* Remove italic */
+            color: var(--white); /* Keep role meta in white */
+            display: inline; /* Keep it on the same line */
+            font-size: 1em; /* Adjust font size if needed */
+        }
+
+        .work-content p {
+            margin-bottom: 20px;
+            color: var(--white); /* Ensure paragraph text is white */
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .skills-list span {
+            background-color: var(--emerald-dark);
+            color: var(--brown-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.5em;
+            font-weight: 400;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            padding: 60px 0;
+            background-color: var(--brown-light);
+        }
+
         .section-title {
             font-family: var(--font-heading);
             font-size: 2.5em;
+            color: var(--emerald-dark);
+            margin-bottom: 30px;
             text-align: center;
-            margin-bottom: 40px;
-            color: var(--white);
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
         .section-title::after {
@@ -79,97 +147,9 @@
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 3px;
-            background-color: var(--brown-dark); /* Accent line */
-        }
-
-        /* Experience Detail - Card Layout */
-        .experience-detail {
-            padding: 60px 0;
-            background-color: var(--black);
-            margin-bottom: 30px;
-            border-radius: 8px;
-            /* Removed large box-shadow to fit dark theme, opt for subtle border */
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .experience-card {
-            background-color: var(--medium-grey); /* Slightly lighter dark grey for card background */
-            border: 1px solid var(--dark-grey); /* Subtle border for definition */
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Darker shadow for depth */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-        }
-
-        .experience-card .duration {
-            font-size: 0.9em;
-            color: var(--emerald-light); /* Lighter emerald for date */
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .experience-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.6em;
-            color: var(--brown-dark); /* Brown accent for company name */
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-
-        .experience-card h4 {
-            font-family: var(--font-subheading);
-            font-size: 1.1em;
-            color: var(--white);
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .experience-card .location {
-            font-size: 0.9em;
-            color: var(--emerald-light);
-            margin-bottom: 15px;
-        }
-
-        .experience-card .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .experience-card .skills-list span {
-            background-color: var(--emerald-dark); /* Dark emerald for skill tags */
-            color: var(--brown-light); /* Light brown for skill text */
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 500;
-        }
-
-        .experience-card p {
-            font-family: var(--font-body);
-            font-size: 1em;
-            color: var(--white);
-            margin-bottom: 0;
-        }
-
-        /* Specialties Section */
-        .specialties {
-            padding: 60px 0;
-            background-color: var(--dark-grey); /* Dark grey background for contrast */
+            background-color: var(--brown-dark);
         }
 
         .specialties-grid {
@@ -179,29 +159,29 @@
         }
 
         .specialty-item {
-            background-color: var(--medium-grey); /* Consistent card background */
+            background-color: var(--white);
             padding: 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .specialty-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
         }
 
         .specialty-item i {
             font-size: 3em;
-            color: var(--brown-dark); /* Brown accent for icons */
+            color: var(--emerald-dark);
             margin-bottom: 20px;
         }
 
         .specialty-item h3 {
             font-family: var(--font-heading);
             font-size: 1.5em;
-            color: var(--white);
+            color: var(--emerald-dark);
             margin-top: 0;
             margin-bottom: 10px;
         }
@@ -209,22 +189,24 @@
         .specialty-item p {
             font-family: var(--font-body);
             font-size: 0.95em;
-            color: var(--emerald-light); /* Lighter emerald for description */
+            color: var(--black);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .section-title {
+            .work-content h2, .section-title {
                 font-size: 2em;
             }
 
-            .experience-grid,
+            .work-content h3 {
+                font-size: 1.5em;
+            }
+
             .specialties-grid {
-                grid-template-columns: 1fr; /* Single column layout on small screens */
+                grid-template-columns: 1fr;
             }
         }
     </style>
-    </head>
+</head>
 <body class="subpage">
     <header id="header">
         <div class="container">
@@ -235,11 +217,11 @@
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
                     </div>
                 </div>
-                
+
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
-                
+
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -247,16 +229,13 @@
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <!-- <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li> -->
                     </ul>
                     <div class="nav-btn-container">
                         <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
                     </div>
                 </nav>
             </div>
-            
+
             <div class="mobile-menu" id="mobile-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -264,112 +243,58 @@
                     <li><a href="publication.html">Publication</a></li>
                     <li><a href="esg.html">ESG</a></li>
                     <li><a href="mentorship.html">Mentorship</a></li>
-                    <!-- <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact</a></li> -->
                 </ul>
                 <div class="mobile-menu-btn-container">
                     <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
                 </div>
             </div>
-        </header>
+    </header>
 
     <main>
         <section class="page-hero about-hero">
             <div class="container">
                 <div class="page-hero-content">
-                    <h1>My Work & Experience</h1>
-                    <p class="page-hero-subtitle">A comprehensive overview of my professional journey, expertise, and contributions to the real estate sector.</p>
-                </div>
+                    <h1>About Work</h1>
+                    </div>
             </div>
         </section>
 
-        <section class="experience-detail" id="current-work">
+        <section class="work-experience">
             <div class="container">
-                <h2 class="section-title">Current Work</h2>
-                <div class="experience-grid">
-                    <div class="experience-card">
-                        <div class="duration">Jan 2021 - Present</div>
-                        <h3>Cruxstone Development & Investment Ltd.</h3>
-                        <h4>Head, Business Development</h4>
-                        <div class="location">Lagos State, Nigeria</div>
-                        <div class="skills-list">
-                            <span>Project Management</span>
-                            <span>Financial Analysis</span>
-                            <span>Account Management</span>
-                            <span>Sales Strategy</span>
-                            <span>Strategic Thinking</span>
-                            <span>Lead Generation</span>
-                        </div>
-                        <p>As Head of Business Development, I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
+                <div class="work-content">
+                    <!-- <h2 class="section-title">Professional Experience</h2> -->
+                    <h3>Current Roles</h3>
+                    <div class="job-header">
+                        <h4>Cruxstone Development & Investment Ltd.</h4>
+                        <span class="role-meta">Head, Business Development | Jan 2021 - Present | Lagos State, Nigeria</span>
                     </div>
+                    <p>As Head of Business Development at Cruxstone Development & Investment Ltd., I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
 
-                    <div class="experience-card">
-                        <div class="duration">Nov 2021 - Present</div>
-                        <h3>Gapstone Developers</h3>
-                        <h4>Head, Business Development and Sales</h4>
-                        <div class="location">Lekki Peninsula scheme 1, Lagos Nigeria</div>
-                        <div class="skills-list">
-                            <span>Project Management</span>
-                            <span>Financial Analysis</span>
-                            <span>Account Management</span>
-                            <span>Sales Strategy</span>
-                            <span>Strategic Thinking</span>
-                            <span>Lead Generation</span>
-                        </div>
-                        <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
+                    <div class="job-header">
+                        <h4>Gapstone Developers</h4>
+                        <span class="role-meta">Head, Business Development and Sales | Nov 2021 - Present | Lekki Peninsula scheme 1, Lagos Nigeria</span>
                     </div>
-                </div>
-            </div>
-        </section>
+                    <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
 
-        <section class="experience-detail" id="past-work">
-            <div class="container">
-                <h2 class="section-title">Past Work</h2>
-                <div class="experience-grid">
-                    <div class="experience-card">
-                        <div class="duration">Jan 2020 - Jan 2021</div>
-                        <h3>Cruxstone Development & Investment Ltd.</h3>
-                        <h4>Senior Investment Advisor</h4>
-                        <div class="location">Nigeria</div>
-                        <div class="skills-list">
-                            <span>Lead Generation</span>
-                            <span>Sales Prospecting</span>
-                            <span>Sales Operations</span>
-                            <span>Project Management</span>
-                        </div>
-                        <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+                    <h3>Previous Experience</h3>
+
+                    <div class="job-header">
+                        <h4>Cruxstone Development & Investment Ltd.</h4>
+                        <span class="role-meta">Senior Investment Advisor | Jan 2020 - Jan 2021 | Nigeria</span>
                     </div>
-                    
-                    <div class="experience-card">
-                        <div class="duration">Dec 2018 - Dec 2019</div>
-                        <h3>Brookstone Property</h3>
-                        <h4>Sales Executive</h4>
-                        <div class="location">Ikoyi, Lagos</div>
-                        <div class="skills-list">
-                            <span>Data Analysis</span>
-                            <span>Sales</span>
-                            <span>Lead Generation</span>
-                            <span>Sales Prospecting</span>
-                            <span>Sales Operations</span>
-                        </div>
-                        <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
+                    <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+
+                    <div class="job-header">
+                        <h4>Brookstone Property</h4>
+                        <span class="role-meta">Sales Executive | Dec 2018 - Dec 2019 | Ikoyi, Lagos</span>
                     </div>
-                    
-                    <div class="experience-card">
-                        <div class="duration">Jul 2014 - Nov 2016</div>
-                        <h3>Wole Ogungbola & Co</h3>
-                        <h4>Head of Agency</h4>
-                        <div class="location">Lagos, Nigeria</div>
-                        <div class="skills-list">
-                            <span>Data Analysis</span>
-                            <span>Sales</span>
-                            <span>Lead Generation</span>
-                            <span>Sales Prospecting</span>
-                            <span>Sales Operations</span>
-                        </div>
-                        <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
+                    <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
+
+                    <div class="job-header">
+                        <h4>Wole Ogungbola & Co</h4>
+                        <span class="role-meta">Head of Agency | Jul 2014 - Nov 2016 | Lagos, Nigeria</span>
                     </div>
+                    <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
                 </div>
             </div>
         </section>
@@ -438,9 +363,7 @@
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
                         <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact" id="contact">
