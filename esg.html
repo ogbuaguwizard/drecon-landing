@@ -102,6 +102,40 @@
             margin-bottom: 0;
         }
 
+        /* --- Animation Styles --- */
+        .animatable {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animatable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific animations for different elements (optional but good for variety) */
+        .page-hero-content h1.animatable,
+        .page-hero-content p.page-hero-subtitle.animatable {
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+        }
+
+        .section-title.animatable {
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(25px);
+        }
+
+        .esg-item.animatable {
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: translateY(20px);
+        }
+
+        .esg-text.animatable {
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            transform: translateY(30px);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .section-title {
@@ -113,13 +147,12 @@
             }
         }
     </style>
-    </head>
+</head>
 <body class="subpage">
     <header id="header">
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
-                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -152,7 +185,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -178,34 +210,34 @@
         <section class="page-hero about-hero">
             <div class="container">
                 <div class="page-hero-content">
-                    <h1>Environmental, Social, and Governance (ESG)</h1>
-                    <p class="page-hero-subtitle">My commitment to sustainable practices, community engagement, and responsible leadership.</p>
+                    <h1 class="animatable">Environmental, Social, and Governance (ESG)</h1>
+                    <p class="page-hero-subtitle animatable">My commitment to sustainable practices, community engagement, and responsible leadership.</p>
                 </div>
             </div>
         </section>
 
         <section class="esg-section">
             <div class="container">
-                <h2 class="section-title">My ESG Activities & Involvement</h2>
+                <h2 class="section-title animatable">My ESG Activities & Involvement</h2>
                 <div class="esg-grid">
-                    <div class="esg-item">
+                    <div class="esg-item animatable">
                         <div class="esg-icon"><i class="fas fa-golf-ball"></i></div>
                         <h3>Golfing</h3>
                         <p>I actively participate in various golfing events and tournaments, often using these platforms to network for charitable causes and raise awareness for community development initiatives.</p>
                     </div>
-                    <div class="esg-item">
+                    <div class="esg-item animatable">
                         <div class="esg-icon"><i class="fas fa-users"></i></div>
                         <h3>Club Associations & Networking</h3>
                         <p>My involvement in various professional and social clubs extends beyond personal interest. I leverage these associations to promote ethical business practices, foster mentorship opportunities, and contribute to industry standards that align with strong governance principles.</p>
                     </div>
-                    <div class="esg-item">
+                    <div class="esg-item animatable">
                         <div class="esg-icon"><i class="fas fa-futbol"></i></div>
                         <h3>Football & Community Engagement</h3>
                         <p>Beyond the business world, I am a passionate football fan. This passion often translates into supporting grassroots sports initiatives and engaging with youth communities, fostering teamwork and discipline. I believe in the power of sports to unite and uplift communities.</p>
                     </div>
                 </div>
 
-                <div class="esg-text">
+                <div class="esg-text animatable">
                     <p>My approach to real estate development is deeply rooted in ESG principles. I believe that true success comes not just from financial gain, but from building sustainable communities, empowering individuals, and operating with unwavering integrity. Whether it's through sustainable building practices, creating inclusive environments, or advocating for transparent governance, I am dedicated to making a positive impact that extends far beyond property lines.</p>
                 </div>
             </div>

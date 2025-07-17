@@ -82,31 +82,47 @@
         }
 
         /* NEW STYLES FOR COMBINED ROLE INFO */
+        .work-content .job-entry {
+            background-color: var(--dark-grey); /* Slightly darker background for each job block */
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-content .job-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
         .work-content .job-header {
-            margin-top: 30px; /* Space above each job entry */
-            margin-bottom: 10px; /* Space below the header */
+            margin-top: 0; /* Adjusted for being inside job-entry */
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 10px;
         }
 
         .work-content .job-header h4 {
             font-family: var(--font-subheading);
-            font-size: 1.3em;
-            color: var(--brown-dark); /* Keep company name in this color */
-            display: inline; /* Keep it on the same line as the meta */
+            font-size: 1.5em; /* Slightly larger for prominence */
+            color: var(--brown-light); /* Brighter brown for company name */
             margin-top: 0;
             margin-bottom: 0;
-            padding-right: 10px; /* Space between company and role meta */
+            padding-right: 0; /* Removed padding as gap handles spacing */
         }
 
         .work-content .job-header .role-meta {
-            font-style: normal; /* Remove italic */
-            color: var(--white); /* Keep role meta in white */
-            display: inline; /* Keep it on the same line */
-            font-size: 1em; /* Adjust font size if needed */
+            font-style: normal;
+            color: var(--emerald-light); /* Brighter white for meta info */
+            font-size: 1.1em;
         }
 
         .work-content p {
             margin-bottom: 20px;
-            color: var(--white); /* Ensure paragraph text is white */
+            color: var(--white);
         }
 
         .skills-list {
@@ -125,6 +141,86 @@
             font-weight: 400;
         }
 
+        /* --- Image Carousel Styles --- */
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            background-color: #333; /* Fallback background for carousel */
+        }
+
+        .carousel-images {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            gap: 10px; /* Gap between images */
+        }
+
+        .carousel-images img {
+            width: calc(100% / 3 - 20px / 3); /* Adjust to show 3 images with gap consideration */
+            /* The 20px comes from 2 gaps (10px each) for 3 images. So each image loses 2/3 of a gap. */
+            height: 100%;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            flex-shrink: 0;
+            border-radius: 8px;
+        }
+
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.5em;
+            border-radius: 5px;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-nav-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-nav-btn.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--brown-dark);
+            transform: scale(1.2);
+        }
+
         /* Specialties Section */
         .specialties {
             padding: 60px 0;
@@ -134,7 +230,7 @@
         .section-title {
             font-family: var(--font-heading);
             font-size: 2.5em;
-            /* color: var(--emerald-dark); */
+            color: var(--white);
             margin-bottom: 30px;
             text-align: center;
             position: relative;
@@ -163,13 +259,13 @@
             padding: 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .specialty-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
         .specialty-item i {
@@ -192,6 +288,57 @@
             color: var(--emerald-light);
         }
 
+        /* --- Animation Styles --- */
+        .animatable {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animatable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific animations for different elements */
+        .page-hero-content h1.animatable,
+        .page-hero-content p.page-hero-subtitle.animatable {
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+        }
+
+        .section-title.animatable {
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(25px);
+        }
+
+        .work-content h3.animatable {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateX(-20px); /* Slide in from left */
+        }
+
+        .job-entry.animatable {
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(30px);
+        }
+
+        .image-carousel.animatable {
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: scale(0.95);
+        }
+        .image-carousel.animatable.visible {
+            transform: scale(1);
+        }
+
+        .specialty-item.animatable {
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: scale(0.95);
+        }
+        .specialty-item.animatable.visible {
+            transform: scale(1);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .work-content h2, .section-title {
                 font-size: 2em;
@@ -201,8 +348,36 @@
                 font-size: 1.5em;
             }
 
+            .work-content .job-header h4 {
+                font-size: 1.3em;
+            }
+
+            .work-content .job-header .role-meta {
+                font-size: 0.9em;
+                display: block; /* Stack meta info on smaller screens */
+            }
+
+            .image-carousel {
+                height: 200px; /* Adjust height for smaller screens */
+            }
+
+            .carousel-images img {
+                width: calc(100% / 1 - 20px / 1); /* Show 1 image on small screens */
+            }
+
+            .carousel-nav-btn {
+                padding: 8px 12px;
+                font-size: 1.2em;
+            }
+
             .specialties-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .carousel-images img {
+                width: calc(100% / 2 - 10px / 2); /* Show 2 images on medium screens with 10px gap */
             }
         }
     </style>
@@ -212,7 +387,6 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
-                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -245,7 +419,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -271,50 +444,118 @@
         <section class="page-hero about-hero">
             <div class="container">
                 <div class="page-hero-content">
-                    <h1>About Work</h1>
-                    </div>
+                    <h1 class="animatable">About Work</h1>
+                    <p class="page-hero-subtitle animatable">Explore my professional journey and expertise in real estate development.</p>
+                </div>
             </div>
         </section>
 
         <section class="work-experience">
             <div class="container">
                 <div class="work-content">
-                    <!-- <h2 class="section-title">Professional Experience</h2> -->
+                    <h2 class="section-title animatable">Professional Experience</h2>
                     <div id="current-work">
-                        <h3>Current Roles</h3>
-                        <div class="job-header">
-                            <h4>Cruxstone Development & Investment Ltd.</h4>
-                            <span class="role-meta">Head, Business Development | Jan 2021 - Present | Lagos State, Nigeria</span>
-                        </div>
-                        <p>As Head of Business Development at Cruxstone Development & Investment Ltd., I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
+                        <h3 class="animatable">Current Roles</h3>
 
-                        <div class="job-header">
-                            <h4>Gapstone Developers</h4>
-                            <span class="role-meta">Head, Business Development and Sales | Nov 2021 - Present | Lekki Peninsula scheme 1, Lagos Nigeria</span>
+                        <div class="job-entry animatable">
+                            <div class="job-header">
+                                <h4>Cruxstone Development & Investment Ltd.</h4>
+                                <span class="role-meta">Head, Business Development | Jan 2021 - Present | Lagos State, Nigeria</span>
+                            </div>
+                            <p>As Head of Business Development at Cruxstone Development & Investment Ltd., I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
+                            <div class="image-carousel" data-autoplay="true" data-visible-images="3">
+                                <div class="carousel-images">
+                                    <img src="images/The Silhoutte.jpeg" alt="Previous Cruxstone Project 1">
+                                    <img src="images/The Nexus.jpg" alt="Previous Cruxstone Project 2">
+                                    <img src="images/autograph.jpg" alt="Previous Cruxstone Project 3">
+                                    <img src="https://via.placeholder.com/600x300/FF99CC/000000?text=Cruxstone+5" alt="Cruxstone Project 5">
+                                </div>
+                                <button class="carousel-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots"></div>
+                            </div>
                         </div>
-                        <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
+
+                        <div class="job-entry animatable">
+                            <div class="job-header">
+                                <h4>Gapstone Developers</h4>
+                                <span class="role-meta">Head, Business Development and Sales | Nov 2021 - Present | Lekki Peninsula scheme 1, Lagos Nigeria</span>
+                            </div>
+                            <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
+                            <div class="image-carousel" data-autoplay="true" data-visible-images="3">
+                                <div class="carousel-images">
+                                    <img src="images/Zirconia.webp" alt="Gapstone Project 1">
+                                    <img src="https://via.placeholder.com/600x300/FF33FF/FFFFFF?text=Gapstone+2" alt="Gapstone Project 2">
+                                    <img src="https://via.placeholder.com/600x300/FF0000/FFFFFF?text=Gapstone+3" alt="Gapstone Project 3">
+                                    <img src="https://via.placeholder.com/600x300/00FF00/000000?text=Gapstone+4" alt="Gapstone Project 4">
+                                    <img src="https://via.placeholder.com/600x300/0000FF/FFFFFF?text=Gapstone+5" alt="Gapstone Project 5">
+                                </div>
+                                <button class="carousel-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="past-work">
-                        <h3>Previous Experience</h3>
+                        <h3 class="animatable">Previous Experience</h3>
 
-                        <div class="job-header">
-                            <h4>Cruxstone Development & Investment Ltd.</h4>
-                            <span class="role-meta">Senior Investment Advisor | Jan 2020 - Jan 2021 | Nigeria</span>
-                        </div>
-                        <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+                        <!-- <div class="job-entry animatable">
+                            <div class="job-header">
+                                <h4>Cruxstone Development & Investment Ltd.</h4>
+                                <span class="role-meta">Senior Investment Advisor | Jan 2020 - Jan 2021 | Nigeria</span>
+                            </div>
+                            <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+                            <div class="image-carousel" data-autoplay="false" data-visible-images="3">
+                                <div class="carousel-images">
+                                    <img src="images/The Silhoutte.jpeg" alt="Previous Cruxstone Project 1">
+                                    <img src="images/The Nexus.jpg" alt="Previous Cruxstone Project 2">
+                                    <img src="images/autograph.jpg" alt="Previous Cruxstone Project 3">
+                                    <img src="https://via.placeholder.com/600x300/DC143C/FFFFFF?text=Prev+Cruxstone+4" alt="Previous Cruxstone Project 4">
+                                </div>
+                                <button class="carousel-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots"></div>
+                            </div>
+                        </div> -->
 
-                        <div class="job-header">
-                            <h4>Brookstone Property</h4>
-                            <span class="role-meta">Sales Executive | Dec 2018 - Dec 2019 | Ikoyi, Lagos</span>
+                        <div class="job-entry animatable">
+                            <div class="job-header">
+                                <h4>Brookstone Property</h4>
+                                <span class="role-meta">Sales Executive | Dec 2018 - Dec 2019 | Ikoyi, Lagos</span>
+                            </div>
+                            <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
+                            <div class="image-carousel" data-autoplay="false" data-visible-images="3">
+                                <div class="carousel-images">
+                                    <img src="https://via.placeholder.com/600x300/4682B4/FFFFFF?text=Brookstone+1" alt="Brookstone Project 1">
+                                    <img src="https://via.placeholder.com/600x300/DAA520/FFFFFF?text=Brookstone+2" alt="Brookstone Project 2">
+                                    <img src="https://via.placeholder.com/600x300/CD5C5C/FFFFFF?text=Brookstone+3" alt="Brookstone Project 3">
+                                </div>
+                                <button class="carousel-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots"></div>
+                            </div>
                         </div>
-                        <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
 
-                        <div class="job-header">
-                            <h4>Wole Ogungbola & Co</h4>
-                            <span class="role-meta">Head of Agency | Jul 2014 - Nov 2016 | Lagos, Nigeria</span>
+                        <div class="job-entry animatable">
+                            <div class="job-header">
+                                <h4>Wole Ogungbola & Co</h4>
+                                <span class="role-meta">Head of Agency | Jul 2014 - Nov 2016 | Lagos, Nigeria</span>
+                            </div>
+                            <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
+                            <div class="image-carousel" data-autoplay="false" data-visible-images="3">
+                                <div class="carousel-images">
+                                    <img src="https://via.placeholder.com/600x300/6A5ACD/FFFFFF?text=Wole+Ogungbola+1" alt="Wole Ogungbola Project 1">
+                                    <img src="https://via.placeholder.com/600x300/7FFF00/000000?text=Wole+Ogungbola+2" alt="Wole Ogungbola Project 2">
+                                    <img src="https://via.placeholder.com/600x300/ADFF2F/000000?text=Wole+Ogungbola+3" alt="Wole Ogungbola Project 3">
+                                    <img src="https://via.placeholder.com/600x300/FF6347/FFFFFF?text=Wole+Ogungbola+4" alt="Wole Ogungbola Project 4">
+                                    <img src="https://via.placeholder.com/600x300/40E0D0/000000?text=Wole+Ogungbola+5" alt="Wole Ogungbola Project 5">
+                                </div>
+                                <button class="carousel-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots"></div>
+                            </div>
                         </div>
-                        <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
                     </div>
                 </div>
             </div>
@@ -322,34 +563,34 @@
 
         <section class="specialties" id="specialties">
             <div class="container">
-                <h2 class="section-title">My Specialties</h2>
+                <h2 class="section-title animatable">My Specialties</h2>
                 <div class="specialties-grid">
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-lightbulb"></i>
                         <h3>Project Conceptualization</h3>
                         <p>Developing innovative ideas and strategies to initiate successful real estate projects from the ground up.</p>
                     </div>
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-search-dollar"></i>
                         <h3>Feasibility and Viability Appraisal</h3>
                         <p>Conducting thorough market and financial analyses to assess the practicality and profitability of development proposals.</p>
                     </div>
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-handshake"></i>
                         <h3>Joint Venture Structuring</h3>
                         <p>Designing and negotiating collaborative partnerships that align interests and optimize project outcomes.</p>
                     </div>
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-calculator"></i>
                         <h3>Real Estate Financial Modelling</h3>
                         <p>Building detailed financial models to forecast returns, manage risks, and support investment decisions.</p>
                     </div>
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-tasks"></i>
                         <h3>Project Management</h3>
                         <p>Overseeing project execution, coordinating teams, and ensuring timely delivery within budget and quality standards.</p>
                     </div>
-                    <div class="specialty-item">
+                    <div class="specialty-item animatable">
                         <i class="fas fa-user-tie"></i>
                         <h3>Real Estate Advisory</h3>
                         <p>Offering expert guidance on property investments, portfolio optimization, and market entry strategies.</p>
@@ -400,6 +641,229 @@
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script>
+        function initScrollAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll(
+                '.section-title, ' +
+                '.page-hero-content h1, ' +
+                '.page-hero-content p.page-hero-subtitle, ' +
+                '.about-container, ' +
+                '.ceo-image, ' +
+                '.ceo-content, ' +
+                '.stat-item, ' +
+                '.specialties .specialty-item, ' +
+                '.testimonials, ' +
+                '.testimonials .testimonial, ' +
+                '.work-experience, ' +
+                '.work-experience #current-work h3, ' +
+                '.work-experience #past-work h3, ' +
+                '.specialties, ' +
+                '.specialties .specialty-item, ' +
+                '.esg-section, ' +
+                '.esg-section .esg-item, ' +
+                '.mentorship-content, ' +
+                '.mentorship-content .mentorship-call-to-action, ' +
+                '.publication-list, ' +
+                '.publication-list .article-card, ' +
+                '.job-entry, ' + /* Now target the entire job-entry block for animation */
+                '.image-carousel' /* Animate the carousels as well */
+            ).forEach(el => {
+                if(el) {
+                    el.classList.add('animatable'); 
+                    observer.observe(el);
+                }
+            });
+        }
+
+        // Run the animation initializer when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+
+        // --- Carousel Functionality ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.image-carousel').forEach(carouselElement => {
+                const carouselImagesContainer = carouselElement.querySelector('.carousel-images');
+                const images = carouselImagesContainer.querySelectorAll('img');
+                const prevButton = carouselElement.querySelector('.carousel-nav-btn.prev');
+                const nextButton = carouselElement.querySelector('.carousel-nav-btn.next');
+                const dotsContainer = carouselElement.querySelector('.carousel-dots');
+                const autoplay = carouselElement.dataset.autoplay === 'true';
+                const visibleImagesCount = parseInt(carouselElement.dataset.visibleImages || 3, 10); // Default to 3 visible images
+
+                let currentIndex = 0;
+                let intervalId;
+
+                // Adjust carousel-images img width based on visibleImagesCount and gap
+                const imgWidth = (100 / visibleImagesCount);
+                images.forEach(img => {
+                    img.style.width = `calc(${imgWidth}% - ${(10 * (visibleImagesCount - 1)) / visibleImagesCount}px)`;
+                });
+
+
+                // Create dots
+                // We create dots for each *slideable position*, not each individual image
+                // The number of dots should correspond to (total images - visible images + 1)
+                const numDots = images.length - visibleImagesCount + 1;
+                for (let i = 0; i < numDots; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        moveToSlide(i);
+                        resetAutoplay();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+
+                const dots = dotsContainer.querySelectorAll('.dot');
+
+                function moveToSlide(index) {
+                    const maxIndex = images.length - visibleImagesCount; // The last valid index to slide to
+                    
+                    if (index < 0) {
+                        currentIndex = maxIndex;
+                    } else if (index > maxIndex) {
+                        currentIndex = 0;
+                    } else {
+                        currentIndex = index;
+                    }
+                    
+                    // Calculate offset based on a single image's width (including its share of the gap)
+                    const imageAndGapWidth = carouselImagesContainer.querySelector('img').offsetWidth + 10; // Image width + 10px gap
+                    const offset = -currentIndex * imageAndGapWidth;
+                    carouselImagesContainer.style.transform = `translateX(${offset}px)`;
+                    updateDots();
+                }
+
+                function updateDots() {
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function showNextSlide() {
+                    moveToSlide(currentIndex + 1);
+                }
+
+                function showPrevSlide() {
+                    moveToSlide(currentIndex - 1);
+                }
+
+                function startAutoplay() {
+                    if (autoplay && images.length > visibleImagesCount) { // Only autoplay if enabled and more images than visible
+                        intervalId = setInterval(showNextSlide, 3000); // Change image every 3 seconds
+                    }
+                }
+
+                function resetAutoplay() {
+                    if (autoplay) {
+                        clearInterval(intervalId);
+                        startAutoplay();
+                    }
+                }
+
+                prevButton.addEventListener('click', () => {
+                    showPrevSlide();
+                    resetAutoplay();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    showNextSlide();
+                    resetAutoplay();
+                });
+
+                // Initial setup
+                moveToSlide(0);
+                startAutoplay();
+
+                // Recalculate image width and position on window resize
+                window.addEventListener('resize', () => {
+                    images.forEach(img => {
+                        img.style.width = `calc(${100 / visibleImagesCount}% - ${(10 * (visibleImagesCount - 1)) / visibleImagesCount}px)`;
+                    });
+                    moveToSlide(currentIndex); // Re-adjust position after resize
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Dropdown functionality for mobile menu
+            const mobileDropdowns = document.querySelectorAll('#mobile-menu .dropdown > a');
+            mobileDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default link behavior
+                    const dropdownMenu = dropdown.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                        dropdownMenu.classList.toggle('active');
+                        dropdown.querySelector('.dropdown-arrow').classList.toggle('fa-chevron-down');
+                        dropdown.querySelector('.dropdown-arrow').classList.toggle('fa-chevron-up');
+                    }
+                });
+            });
+
+            // Dropdown functionality for desktop menu
+            const desktopDropdowns = document.querySelectorAll('header nav .dropdown > a');
+            desktopDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', (e) => {
+                    // Only prevent default if it's not the actual link to the page
+                    if (dropdown.getAttribute('href') === 'about-work.html') {
+                        e.preventDefault();
+                    }
+                    const dropdownMenu = dropdown.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                        dropdownMenu.classList.toggle('active');
+                        dropdown.querySelector('.dropdown-arrow').classList.toggle('fa-chevron-down');
+                        dropdown.querySelector('.dropdown-arrow').classList.toggle('fa-chevron-up');
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                        menu.classList.remove('active');
+                        menu.previousElementSibling.querySelector('.dropdown-arrow').classList.remove('fa-chevron-up');
+                        menu.previousElementSibling.querySelector('.dropdown-arrow').classList.add('fa-chevron-down');
+                    });
+                }
+                if (!e.target.closest('#header')) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>

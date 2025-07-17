@@ -469,6 +469,22 @@ nav a:hover::after {
     /* color: #333; */
 }
 
+/* Add initial state for animation and transition */
+.about-ceo .ceo-image,
+.about-ceo .ceo-content,
+.specialty-item { /* Apply to specialty items as well */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+}
+
+.about-ceo .ceo-image.visible,
+.about-ceo .ceo-content.visible,
+.specialty-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .about-ceo .container {
     max-width: 1100px; /* Adjust max-width as needed for your overall layout */
     margin: 0 auto;
@@ -605,232 +621,6 @@ nav a:hover::after {
     }
 }
 
-/* Projects Section */
-.projects {
-    padding: 6rem 0;
-    background: var(--black);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.project-card {
-    background: var(--medium-grey);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: var(--transition);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-    border: 1px solid rgba(48, 82, 71, 0.3);
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(48, 82, 71, 0.2);
-}
-
-.project-image {
-    height: 250px;
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h3 {
-    color: var(--brown-dark);
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.project-content p {
-    color: var(--emerald-light);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.project-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.project-tag {
-    background: var(--emerald-dark);
-    color: var(--brown-light);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-/* Quote Section Styles */
-.quote-section {
-    background: url('../images/halftransprofile5.png') center/cover no-repeat;
-    position: relative;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    color: #fff;
-    overflow: hidden;
-}
-
-.quote-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1; 
-}
-
-.quote-overlay {
-    position: relative;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 3rem 3.5rem;
-    border-radius: 15px;
-    max-width: 800px;
-    text-align: center;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  */
-    /* backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); */
-    /* border: 1px solid rgba(255, 255, 255, 0.2); */
-}
-
-.quote-section blockquote {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    margin-bottom: 25px;
-    line-height: 1.4;
-    position: relative;
-    padding: 0 20px; 
-    color: var(--brown-light);
-}
-
-.quote-section blockquote::before,
-.quote-section blockquote::after {
-    font-family: 'Font Awesome 6 Free'; /* Use Font Awesome for quotes */
-    font-weight: 900;
-    position: absolute;
-    font-size: 4rem; /* Large quote icons */
-    color: rgba(255, 255, 255, 0.3); /* Subtler color for the icons */
-    line-height: 1;
-}
-
-.quote-section blockquote::before {
-    content: '\201C'; /* Left double quotation mark (can use '\f10d' for Font Awesome if you prefer a different icon) */
-    top: -20px;
-    left: 0;
-}
-
-.quote-section blockquote::after {
-    content: '\201D'; /* Right double quotation mark (can use '\f10e' for Font Awesome) */
-    bottom: -20px;
-    right: 0;
-}
-
-
-.quote-author {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    font-size: 1.3rem;
-    color: var(--brown-dark);
-    letter-spacing: 0.5px;
-}
-
-/* Responsive adjustments for Quote Section */
-@media (max-width: 992px) {
-    .quote-overlay {
-        padding: 2.5rem 3rem;
-    }
-    .quote-section blockquote {
-        font-size: 2rem;
-    }
-    .quote-section blockquote::before,
-    .quote-section blockquote::after {
-        font-size: 3.5rem;
-    }
-    .quote-author {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .quote-section {
-        min-height: 300px;
-    }
-    .quote-overlay {
-        padding: 2rem 2.5rem;
-        border-radius: 10px;
-    }
-    .quote-section blockquote {
-        font-size: 1.8rem;
-        padding: 0 10px;
-    }
-    .quote-section blockquote::before,
-    .quote-section blockquote::after {
-        font-size: 3rem;
-        /* top: -15px; */
-        bottom: -15px;
-    }
-    .quote-author {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .quote-section {
-        min-height: 250px;
-        padding: 20px 10px;
-    }
-    .quote-overlay {
-        padding: 1.5rem;
-        border-radius: 8px;
-    }
-    .quote-section blockquote {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
-        padding: 0; /* Remove horizontal padding on very small screens */
-    }
-    .quote-section blockquote::before,
-    .quote-section blockquote::after {
-        font-size: 2.5rem;
-        /* top: -10px; */
-        bottom: -10px;
-    }
-    .quote-author {
-        font-size: 1rem;
-    }
-}
-
 /* Testimonials Section */
 .testimonials {
     padding: 6rem 0;
@@ -860,6 +650,14 @@ nav a:hover::after {
     box-sizing: border-box;
     /* border: 1px solid rgba(131, 143, 139, 0.3); */
     margin: 0 10px;
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(50px); /* Initial state for animation */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.testimonial.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .testimonial-content {
@@ -965,8 +763,10 @@ nav a:hover::after {
     padding: 2rem;
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.8s ease;
+    transition: all 0.8s ease; /* Ensure this is set for your stat items */
 }
+
+/* The .visible class for stat items is already defined globally, which is good. */
 
 .stat-number {
     font-size: 3.5rem;
@@ -1354,10 +1154,6 @@ footer {
         margin-top: 0.5rem;
     }
 }
-
-
-
-
 
 /* Page Hero Section (for About, Contact, etc. pages) */
 .page-hero {

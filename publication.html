@@ -89,14 +89,56 @@
             margin-bottom: 20px;
             flex-grow: 1; /* Allows paragraph to take available space */
         }
+
+        /* --- Animation Styles --- */
+        .animatable {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animatable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific animations for different elements (optional but good for variety) */
+        .page-hero-content h1.animatable,
+        .page-hero-content p.page-hero-subtitle.animatable {
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+        }
+
+        .section-title.animatable {
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(25px);
+        }
+
+        .article-card.animatable {
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: scale(0.95);
+        }
+        .article-card.animatable.visible {
+            transform: scale(1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-    </head>
+</head>
 <body class="subpage">
     <header id="header">
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
-                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -129,7 +171,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -155,23 +196,23 @@
         <section class="page-hero about-hero">
             <div class="container">
                 <div class="page-hero-content">
-                    <h1>My Publications</h1>
-                    <p class="page-hero-subtitle">Insights and thought leadership on the real estate landscape and business management.</p>
+                    <h1 class="animatable">My Publications</h1>
+                    <p class="page-hero-subtitle animatable">Insights and thought leadership on the real estate landscape and business management.</p>
                 </div>
             </div>
         </section>
 
         <section class="publications-list">
             <div class="container">
-                <h2 class="section-title">Publications</h2>
+                <h2 class="section-title animatable">Publications</h2>
                 <div class="articles-grid">
-                    <div class="article-card">
+                    <div class="article-card animatable">
                         <h3>Reimagining Nigeria's Real Estate Landscape: The Strategic Vision of Sulaiman Abu</h3>
                         <p>This Business Day article highlights Sulaiman Abu's 17-year career impact on Nigeria's real estate, showcasing his expertise in strategic execution and business intelligence.</p>
                         <img src="https://businessday.ng/wp-content/themes/bday/assets/build/images/businessday.png" alt="BusinessDay Logo">
                         <a href="https://businessday.ng/brands-advertising/article/reimagining-nigerias-real-estate-landscape-the-strategic-vision-of-sulaiman-abu/" target="_blank" class="btn">Read Article <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="article-card">
+                    <div class="article-card animatable">
                         <h3>Next Article Title</h3>
                         <p>Next Article Details.</p>
                         <a href="#" target="_blank" class="btn">Read Article <i class="fas fa-external-link-alt"></i></a>

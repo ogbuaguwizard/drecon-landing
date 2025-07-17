@@ -143,32 +143,33 @@ function initScrollAnimations() {
 
     document.querySelectorAll(
         '.section-title, ' +
-        '.about-container, ' +
-        '.stat-item, ' +
-        '.about-content, ' +
-        '.contact-cta .section-title, ' +
-        '.contact-cta p, ' +
-        '.contact-cta .btn, ' +
         '.page-hero-content h1, ' +
         '.page-hero-content p.page-hero-subtitle, ' +
-        '.about-ceo .ceo-image, ' +
+         '.about-ceo .ceo-image, ' +
         '.about-ceo .ceo-content, ' +
-        '.specialties .specialty-item, ' +
-        '.testimonials, ' +
-        '.testimonials .testimonial, ' +
+        '.specialty-item, ' +
+        '.stat-item, ' +
+        '.testimonial, ' +
         '.work-experience, ' +
-        '.work-experience #current-work, ' +
-        '.work-experience #past-work, ' +
-        '.specialties, ' +
-        '.specialties .specialty-item, ' +
-        '.esg-section, ' +
-        '.esg-section .esg-item, ' +
-        '.mentorship-content, ' +
-        '.mentorship-content .mentorship-call-to-action, ' +
-        '.publication-list, ' +
-        '.publication-list .article-card'
+        '.work-content #current-work, ' +
+        '.work-content #past-work, ' +
+        '.work-content .animatable, ' +
+        '.specialties, ' + 
+        '.specialties .specialty-item, ' + 
+        '.esg-item, ' +
+        '.esg-text, ' +
+        '.mentorship-content p, ' +
+        '.mentorship-content h3, ' +
+        '.mentorship-content ul, ' +
+        '.mentorship-call-to-action, ' +
+        '.publications-list, ' + 
+        '.publications-list .container .animatable, ' + 
+        '.job-header, ' + 
+        '.work-content p'
     ).forEach(el => {
         if(el) {
+            // Add a class to elements that should be animated
+            el.classList.add('animatable'); 
             observer.observe(el);
         }
     });

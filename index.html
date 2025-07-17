@@ -115,12 +115,10 @@
     </style>
 </head>
 <body class="homepage">
-    <!-- Header -->
     <header id="header">
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
-                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -153,7 +151,6 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -175,7 +172,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -184,14 +180,12 @@
                 </div>
                 <div class="hero-subtitle">Collaborates with top global firms and mentors aspiring real estate professionals, empowering the next generation of industry leaders.</div>
                 <div class="hero-buttons">
-                    <!-- <a href="#projects" class="btn">View Our Projects</a> -->
                     <a href="#contact" class="btn">Contact Me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Marquee Section -->
     <div class="marquee">
         <div class="marquee-content">
             <div class="marquee-item"><i class="fas fa-hard-hat"></i> Infrastructure Development</div>
@@ -206,7 +200,6 @@
         </div>
     </div>
 
-    <!-- About CEO Section -->
     <section class="about-ceo" id="ceo">
         <div class="container">
             <div class="about-container">
@@ -216,8 +209,8 @@
                 <div class="ceo-content">
                     <h2>Meet Sulaiman Abu</h2>
                     <p>With over 17 years of dynamic, hands-on experience that spans the full spectrum of the real estate value chain in Nigeria, I've built a reputation as a transformative figure in Nigeria's rapidly evolving property landscape.
-                       Born and raised in Somolu, Lagos, I hold a Higher National Diploma (HND) in Estate Management from Federal Polytechnic, Auchi, Edo State. My journey in real estate began from the ground up, acquiring practical knowledge through sheer dedication and perseverance.
-                       My robust skill set encompasses financial projections, design creation, project conceptualization, and strategic management that have consistently set me apart in the industry.
+                        Born and raised in Somolu, Lagos, I hold a Higher National Diploma (HND) in Estate Management from Federal Polytechnic, Auchi, Edo State. My journey in real estate began from the ground up, acquiring practical knowledge through sheer dedication and perseverance.
+                        My robust skill set encompasses financial projections, design creation, project conceptualization, and strategic management that have consistently set me apart in the industry.
                     </p>
                     <a href="about-work.html" class="btn btn-light">Learn More</a>
                 </div>
@@ -251,16 +244,6 @@
             </div>
         </section>
 
-    <!-- <section class="quote-section">
-        <div class="quote-overlay">
-            <blockquote>
-                "Real estate is not just about buildings—it's about building lives, communities, and legacies that endure."
-            </blockquote>
-            <div class="quote-author">— Sulaiman Abu</div>
-        </div>
-    </section> -->
-
-    <!-- Stats Section -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -280,7 +263,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title">Client Testimonials</h2>
@@ -337,13 +319,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-about">
                     <div class="logo-container" style="margin-bottom: 1.5rem;">
-                        <!-- <div class="logo-icon" style="width: 40px; height: 40px;"></div> -->
                         <div class="logo-text">
                             <div class="logo-main">SULAIMAN ABU</div>
                             <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -364,7 +344,7 @@
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-contact" id="contact">
@@ -376,10 +356,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Sulaiman Abu | Real Estate Developer. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Sulaiman Abu | Real Estate Developer. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

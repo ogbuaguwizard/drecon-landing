@@ -30,7 +30,7 @@
     <meta name="twitter:site" content="@SulaimanAbuDev">
     <meta name="twitter:creator" content="@Sulaimanabu">
     <meta name="twitter:title" content="Sulaiman Abu | Mentorship">
-    <meta name="twitter:description" content="Learn about Sulaiman Abu's mentorship program and how to apply for guidance in real estate or business.">
+    <meta name="twitter:description" content="Learn about Sulaiman Abu's commitment to Environmental, Social, and Governance (ESG) principles through his personal and professional activities.">
     <meta name="twitter:image" content="https://www.sulaimanabu.com/images/profile.jpg">
     <meta name="twitter:image:alt" content="Sulaiman Abu - Real Estate Developer">
 
@@ -100,6 +100,42 @@
             font-size: 1.2em;
             color: var(--white);
             margin-bottom: 30px;
+        }
+
+        /* --- Animation Styles --- */
+        .animatable {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animatable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific animations for different elements (optional but good for variety) */
+        .page-hero-content h1.animatable,
+        .page-hero-content p.page-hero-subtitle.animatable {
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+        }
+
+        .section-title.animatable {
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(25px);
+        }
+
+        .mentorship-content p.animatable,
+        .mentorship-content h3.animatable,
+        .mentorship-content ul.animatable {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(20px);
+        }
+
+        .mentorship-call-to-action.animatable {
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            transform: translateY(30px);
         }
 
         /* Responsive Design */
@@ -394,27 +430,27 @@
         <section class="page-hero about-hero">
             <div class="container">
                 <div class="page-hero-content">
-                    <h1>Mentorship with Sulaiman Abu</h1>
-                    <p class="page-hero-subtitle">Guiding the next generation of real estate leaders and entrepreneurs.</p>
+                    <h1 class="animatable">Mentorship with Sulaiman Abu</h1>
+                    <p class="page-hero-subtitle animatable">Guiding the next generation of real estate leaders and entrepreneurs.</p>
                 </div>
             </div>
         </section>
 
         <section class="mentorship-content">
             <div class="container">
-                <h2 class="section-title">My Mentorship Philosophy</h2>
-                <p>Having navigated the dynamic landscape of real estate development for over 17 years, I believe in the power of shared knowledge and experience. Mentorship is not just about imparting skills; it's about fostering growth, inspiring innovation, and helping individuals unlock their full potential. I am passionate about guiding aspiring professionals and entrepreneurs, helping them overcome challenges, develop strategic thinking, and build impactful careers in the industry.</p>
+                <h2 class="section-title animatable">My Mentorship Philosophy</h2>
+                <p class="animatable">Having navigated the dynamic landscape of real estate development for over 17 years, I believe in the power of shared knowledge and experience. Mentorship is not just about imparting skills; it's about fostering growth, inspiring innovation, and helping individuals unlock their full potential. I am passionate about guiding aspiring professionals and entrepreneurs, helping them overcome challenges, develop strategic thinking, and build impactful careers in the industry.</p>
                 
-                <h3>Who Can Benefit?</h3>
-                <ul>
+                <h3 class="animatable">Who Can Benefit?</h3>
+                <ul class="animatable">
                     <li>Aspiring Real Estate Developers: Those looking to understand project conceptualization, joint ventures, and market dynamics.</li>
                     <li>Young Entrepreneurs: Individuals seeking guidance on business strategy, leadership, and navigating competitive markets.</li>
                     <li>Industry Professionals: Anyone looking to refine their skills, gain deeper insights, or pivot their career within the real estate sector.</li>
                 </ul>
 
-                <h3>What I Offer</h3>
-                <p>My mentorship approach is personalized, focusing on practical advice, strategic insights, and honest feedback. Sessions can cover:</p>
-                <ul>
+                <h3 class="animatable">What I Offer</h3>
+                <p class="animatable">My mentorship approach is personalized, focusing on practical advice, strategic insights, and honest feedback. Sessions can cover:</p>
+                <ul class="animatable">
                     <li>Career pathing and goal setting</li>
                     <li>Market analysis and investment strategies</li>
                     <li>Negotiation tactics and deal structuring</li>
@@ -422,7 +458,7 @@
                     <li>Overcoming industry-specific challenges</li>
                 </ul>
                 
-                <div class="mentorship-call-to-action">
+                <div class="mentorship-call-to-action animatable">
                     <p>Ready to take the next step in your professional journey? Fill out the form below to share your aspirations and how you believe mentorship can help you achieve them. I will review all submissions and will reach out if there's a good fit.</p>
                     <button class="btn" id="openMentorshipModal">Apply for Mentorship <i class="fas fa-external-link-alt"></i></button>
                 </div>
