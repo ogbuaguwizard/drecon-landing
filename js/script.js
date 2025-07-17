@@ -144,9 +144,6 @@ function initScrollAnimations() {
     document.querySelectorAll(
         '.section-title, ' +
         '.about-container, ' +
-        '.service-card, ' +
-        '.project-card, ' +
-        '.timeline, ' +
         '.stat-item, ' +
         '.about-content, ' +
         '.contact-cta .section-title, ' +
@@ -154,8 +151,22 @@ function initScrollAnimations() {
         '.contact-cta .btn, ' +
         '.page-hero-content h1, ' +
         '.page-hero-content p.page-hero-subtitle, ' +
-        '.gallery-item, ' +
-        '.csr-pillar-item'
+        '.about-ceo .ceo-image, ' +
+        '.about-ceo .ceo-content, ' +
+        '.specialties .specialty-item, ' +
+        '.testimonials, ' +
+        '.testimonials .testimonial, ' +
+        '.work-experience, ' +
+        '.work-experience #current-work, ' +
+        '.work-experience #past-work, ' +
+        '.specialties, ' +
+        '.specialties .specialty-item, ' +
+        '.esg-section, ' +
+        '.esg-section .esg-item, ' +
+        '.mentorship-content, ' +
+        '.mentorship-content .mentorship-call-to-action, ' +
+        '.publication-list, ' +
+        '.publication-list .article-card'
     ).forEach(el => {
         if(el) {
             observer.observe(el);

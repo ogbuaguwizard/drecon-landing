@@ -16,8 +16,9 @@
     --brown-light: #ede5d3;
     --white: #fefefe;
     --black: #050807;
-    --dark-grey: #1a1a1a;
-    --medium-grey: #2a2a2a;
+    --dark-grey: #101010;
+    --medium-grey: #212121;
+    --light-grey: #3a3a3a;
     
     /* Typography */
     --font-heading: 'Jedira', 'Playfair Display', serif; /* Similar to Jedira/Kegador */
@@ -464,7 +465,7 @@ nav a:hover::after {
 /* About Section */
 .about-ceo {
     padding: 80px 0; /* More vertical space */
-    background-color: var(--dark-grey); /* Clean white background */
+    background-color: var(--medium-grey);
     /* color: #333; */
 }
 
@@ -851,7 +852,7 @@ nav a:hover::after {
 }
 
 .testimonial {
-    background: var(--black);
+    background: var(--medium-grey);
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -985,10 +986,11 @@ nav a:hover::after {
 
 /* Footer */
 footer {
-    background: var(--black);
+    background: #040807;
+    /* box-shadow: 0 -8px 32px rgb(7, 16, 13); */
     color: var(--white);
     padding: 4rem 0 2rem;
-    border-top: 1px solid rgba(48, 82, 71, 0.3);
+    border-top: 1px solid rgba(18, 30, 26, 0.3);
 }
 
 .footer-grid {
