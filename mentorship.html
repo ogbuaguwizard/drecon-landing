@@ -41,19 +41,19 @@
         /* Mentorship Content Section */
         .mentorship-content {
             padding: 60px 0;
-            background-color: var(--brown-light);
+            background-color: var(--dark-grey);
         }
 
         .mentorship-content p {
             font-size: 1.1em;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 25px;
         }
 
         .mentorship-content h3 {
             font-family: var(--font-heading);
             font-size: 1.8em;
-            color: var(--emerald-dark);
+            color: var(--brown-dark);
             margin-top: 40px;
             margin-bottom: 15px;
         }
@@ -66,7 +66,7 @@
 
         .mentorship-content ul li {
             font-size: 1.1em;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 10px;
             position: relative;
             padding-left: 25px;
@@ -87,7 +87,7 @@
         }
 
         .mentorship-call-to-action {
-            background-color: var(--white);
+            background-color: var(--medium-grey);
             /* border: 1px solid var(--dark-grey); */
             border-radius: 8px;
             padding: 40px;
@@ -98,7 +98,7 @@
 
         .mentorship-call-to-action p {
             font-size: 1.2em;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 30px;
         }
 
@@ -121,9 +121,218 @@
                 font-size: 1em;
             }
         }
+
+/* --- Modal (Popup Form) Styles --- */
+.modal {
+    display: none; /* This ensures it's hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top, higher than header */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Enable vertical scroll if content overflows */
+    background-color: rgba(0,0,0,0.8); /* Dark overlay */
+    justify-content: center; /* Center horizontally (will only apply when display is flex) */
+    padding: 20px; /* Add some overall padding */
+    box-sizing: border-box; /* Ensure padding doesn't push it out of view */
+}
+
+.modal.active {
+    display: flex; /* Show the modal and enable flexbox centering when active */
+}
+
+.modal-content {
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.7); /* Stronger shadow for depth */
+    width: 90%; /* Start with a percentage width */
+    max-width: 600px; /* Max width for larger screens */
+    position: relative;
+    color: var(--white);
+    padding: 30px; /* Default padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+    animation: fadeInScale 0.3s ease-out; /* Smooth entrance animation */
+
+    /* New: Adjusting vertical positioning */
+    margin-top: 100px; /* Add a default top margin to push it down from the top */
+    margin-bottom: 20px; /* Some bottom margin too */
+    align-self: flex-start; /* Align content to the start (top) of the flex container */
+    
+    /* Ensure modal content takes up enough vertical space on smaller screens */
+    min-height: 50vh; /* Minimum height for better mobile appearance */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if there's extra space within the content */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.close-button {
+    color: var(--white);
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Adjusted right for consistency */
+    font-size: 32px; /* Slightly larger for easier tap */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--brown-dark);
+    transform: rotate(90deg); /* Little animation on close */
+}
+
+.modal-content h2 {
+    font-family: var(--font-heading);
+    color: var(--brown-dark);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2.2em; /* Slightly larger for impact */
+    line-height: 1.2;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.95em; /* Slightly smaller for compactness */
+}
+
+.modal-form input[type="text"],
+.modal-form input[type="email"],
+.modal-form input[type="tel"],
+.modal-form textarea {
+    width: 100%; /* Full width of its container */
+    padding: 12px 15px; /* Consistent padding */
+    margin-bottom: 18px; /* Slightly reduced margin */
+    border: 1px solid var(--medium-grey);
+    border-radius: 5px;
+    background-color: var(--medium-grey);
+    color: var(--white);
+    font-size: 1em;
+    box-sizing: border-box; /* Crucial for responsive widths */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-form input[type="text"]:focus,
+.modal-form input[type="email"]:focus,
+.modal-form input[type="tel"]:focus,
+.modal-form textarea:focus {
+    border-color: var(--emerald-dark); /* Highlight on focus */
+    box-shadow: 0 0 0 2px rgba(var(--emerald-dark-rgb), 0.3); /* Subtle glow */
+    outline: none; /* Remove default outline */
+}
+
+.modal-form input[type="text"]::placeholder,
+.modal-form input[type="email"]::placeholder,
+.modal-form input[type="tel"]::placeholder,
+.modal-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Lighter placeholder */
+}
+
+.modal-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px;
+    max-height: 250px; /* Prevent it from getting too tall */
+}
+
+.modal-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    /* background-color: var(--brown-dark); */
+    /* color: var(--white); */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 10px; /* Add some space above button */
+}
+
+.modal-form .form-status {
+    margin-top: 20px; /* More space for status message */
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--emerald-light);
+    word-wrap: break-word; /* Ensure long messages break correctly */
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%; /* Take up more width on very small screens */
+        padding: 25px 20px; /* Reduce padding to save space */
+        
+        /* Adjusted margins for mobile to give more space from top */
+        margin-top: 80px; /* Adjusted to give more clearance from the top */
+        margin-bottom: 20px; 
+        
+        max-height: 90vh; /* Don't exceed viewport height */
+        overflow-y: auto; /* Allow scrolling within the modal content */
+    }
+
+    .modal-content h2 {
+        font-size: 1.8em; /* Smaller title */
+        margin-bottom: 20px;
+    }
+
+    .close-button {
+        font-size: 28px; /* Slightly smaller close button */
+        top: 10px;
+        right: 15px;
+    }
+
+    .modal-form label {
+        font-size: 0.9em;
+    }
+
+    .modal-form input[type="text"],
+    .modal-form input[type="email"],
+    .modal-form input[type="tel"],
+    .modal-form textarea {
+        padding: 10px 12px; /* Reduce input padding */
+        margin-bottom: 15px; /* Reduce input margin */
+    }
+
+    .modal-form button[type="submit"] {
+        padding: 12px; /* Reduce button padding */
+        font-size: 1em;
+    }
+}
+
+/* Further refinement for very small screens or when content is tall */
+@media (max-height: 600px) and (max-width: 480px) {
+    .modal-content {
+        margin-top: 60px; /* Even less margin from the top for very short screens */
+        padding: 15px; /* Even less padding */
+    }
+    .modal-content h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    .close-button {
+        font-size: 24px;
+    }
+}
     </style>
-    </head>
-<body class="subpage">
+</head>
+<body class="subpage mentorshippage"> 
     <header id="header">
         <div class="container">
             <div class="nav-container">
@@ -141,30 +350,45 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-work.html">About Work</a></li>
+                        <li class="dropdown">
+                            <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about-work.html#past-work">Past Work</a></li>
+                                <li><a href="about-work.html#current-work">Current Work</a></li>
+                                <li><a href="about-work.html#specialties">Specialties</a></li>
+                            </ul>
+                        </li>
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
-                        <li><a href="mentorship.html" class="active">Mentorship</a></li>
+                        <li><a href="mentorship.html">Mentorship</a></li>
                     </ul>
                     <div class="nav-btn-container">
                         <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
                     </div>
                 </nav>
             </div>
-            
-            <div class="mobile-menu" id="mobile-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-work.html">About Work</a></li>
-                    <li><a href="publication.html">Publication</a></li>
-                    <li><a href="esg.html">ESG</a></li>
-                    <li><a href="mentorship.html" class="active">Mentorship</a></li>
-                </ul>
-                <div class="mobile-menu-btn-container">
-                    <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
-                </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-work.html#past-work">Past Work</a></li>
+                        <li><a href="about-work.html#current-work">Current Work</a></li>
+                        <li><a href="about-work.html#specialties">Specialties</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="esg.html">ESG</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+            </ul>
+            <div class="mobile-menu-btn-container">
+                <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
             </div>
-        </header>
+        </div>
+    </header>
 
     <main>
         <section class="page-hero about-hero">
@@ -200,7 +424,7 @@
                 
                 <div class="mentorship-call-to-action">
                     <p>Ready to take the next step in your professional journey? Fill out the form below to share your aspirations and how you believe mentorship can help you achieve them. I will review all submissions and will reach out if there's a good fit.</p>
-                    <a href="#" target="_blank" class="btn">Apply for Mentorship <i class="fas fa-external-link-alt"></i></a>
+                    <button class="btn" id="openMentorshipModal">Apply for Mentorship <i class="fas fa-external-link-alt"></i></button>
                 </div>
             </div>
         </section>
@@ -247,6 +471,30 @@
             </div>
         </div>
     </footer>
+
+    <div id="mentorshipModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Apply for Mentorship</h2>
+            <form id="mentorshipForm" action="https://formspree.io/f/YOUR_FORMSPREE_CODE" method="POST" class="modal-form">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                <label for="goals">Your Mentorship Goals (What do you hope to achieve?):</label>
+                <textarea id="goals" name="goals" rows="5" placeholder="Describe your objectives, challenges you face, or specific areas you want to improve." required></textarea>
+
+                <label for="background">Brief Background/Why you're interested in mentorship:</label>
+                <textarea id="background" name="background" rows="5" placeholder="Share a bit about your journey and why you believe mentorship with Sulaiman Abu is the right fit." required></textarea>
+
+                <button class="btn" type="submit">Submit Application</button>
+                <p class="form-status" id="formStatus"></p>
+            </form>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

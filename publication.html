@@ -41,7 +41,7 @@
         /* Publications List */
         .publications-list {
             padding: 60px 0;
-            background-color: var(--white);
+            background-color: var(--dark-grey);
         }
 
         .articles-grid {
@@ -51,8 +51,8 @@
         }
 
         .article-card {
-            background-color: var(--brown-light);
-            /* border: 1px solid var(--dark-grey); */
+            background-color: var(--medium-grey);
+            border: 1px solid var(--dark-grey);
             border-radius: 8px;
             padding: 30px;
             /* box-shadow: 0 4px 10px rgba(0,0,0,0.3); */
@@ -68,9 +68,9 @@
         }
 
         .article-card h3 {
-            /* font-family: var(--font-heading); */
+            font-family: var(--font-heading);
             font-size: 1.5em;
-            color: var(--emerald-dark );
+            color: var(--brown-dark);
             margin-top: 0;
             margin-bottom: 15px;
         }
@@ -85,7 +85,7 @@
         .article-card p {
             font-family: var(--font-body);
             font-size: 1.1em;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 20px;
             flex-grow: 1; /* Allows paragraph to take available space */
         }
@@ -96,6 +96,7 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
+                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -109,36 +110,46 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-work.html">About Work</a></li>
-                        <li><a href="publication.html" class="active">Publication</a></li>
+                        <li class="dropdown">
+                            <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about-work.html#past-work">Past Work</a></li>
+                                <li><a href="about-work.html#current-work">Current Work</a></li>
+                                <li><a href="about-work.html#specialties">Specialties</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <!-- <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li> -->
                     </ul>
                     <div class="nav-btn-container">
                         <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
                     </div>
                 </nav>
             </div>
-            
-            <div class="mobile-menu" id="mobile-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-work.html">About Work</a></li>
-                    <li><a href="publication.html" class="active">Publication</a></li>
-                    <li><a href="esg.html">ESG</a></li>
-                    <li><a href="mentorship.html">Mentorship</a></li>
-                    <!-- <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact</a></li> -->
-                </ul>
-                <div class="mobile-menu-btn-container">
-                    <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
-                </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-work.html#past-work">Past Work</a></li>
+                        <li><a href="about-work.html#current-work">Current Work</a></li>
+                        <li><a href="about-work.html#specialties">Specialties</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="esg.html">ESG</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+            </ul>
+            <div class="mobile-menu-btn-container">
+                <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
             </div>
-        </header>
+        </div>
+    </header>
 
     <main>
         <section class="page-hero about-hero">

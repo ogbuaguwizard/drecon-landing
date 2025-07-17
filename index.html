@@ -31,6 +31,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specialties Section */
+        .specialties {
+            padding: 60px 0;
+            background-color: var(--black);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5em;
+            /* color: var(--emerald-dark); */
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--brown-dark);
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .specialty-item {
+            background-color: var(--dark-grey);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .specialty-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+        }
+
+        .specialty-item i {
+            font-size: 3em;
+            color: var(--brown-dark);
+            margin-bottom: 20px;
+        }
+
+        .specialty-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5em;
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .specialty-item p {
+            font-family: var(--font-body);
+            font-size: 0.95em;
+            color: var(--emerald-light);
+        }
+
+        @media (max-width: 768px) {
+            .work-content h2, .section-title {
+                font-size: 2em;
+            }
+
+            .work-content h3 {
+                font-size: 1.5em;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="homepage">
     <!-- Header -->
@@ -52,7 +134,14 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-work.html">About Work</a></li>
+                        <li class="dropdown">
+                            <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about-work.html#past-work">Past Work</a></li>
+                                <li><a href="about-work.html#current-work">Current Work</a></li>
+                                <li><a href="about-work.html#specialties">Specialties</a></li>
+                            </ul>
+                        </li>
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
@@ -68,7 +157,14 @@
         <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about-work.html">About Work</a></li>
+                <li class="dropdown">
+                    <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-work.html#past-work">Past Work</a></li>
+                        <li><a href="about-work.html#current-work">Current Work</a></li>
+                        <li><a href="about-work.html#specialties">Specialties</a></li>
+                    </ul>
+                </li>
                 <li><a href="publication.html">Publication</a></li>
                 <li><a href="esg.html">ESG</a></li>
                 <li><a href="mentorship.html">Mentorship</a></li>
@@ -129,14 +225,52 @@
         </div>
     </section>
 
-    <section class="quote-section">
+    <section class="specialties" id="specialties">
+            <div class="container">
+                <h2 class="section-title">My Specialties</h2>
+                <div class="specialties-grid">
+                    <div class="specialty-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Project Conceptualization</h3>
+                        <p>Developing innovative ideas and strategies to initiate successful real estate projects from the ground up.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-search-dollar"></i>
+                        <h3>Feasibility and Viability Appraisal</h3>
+                        <p>Conducting thorough market and financial analyses to assess the practicality and profitability of development proposals.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Joint Venture Structuring</h3>
+                        <p>Designing and negotiating collaborative partnerships that align interests and optimize project outcomes.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Real Estate Financial Modelling</h3>
+                        <p>Building detailed financial models to forecast returns, manage risks, and support investment decisions.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Project Management</h3>
+                        <p>Overseeing project execution, coordinating teams, and ensuring timely delivery within budget and quality standards.</p>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Real Estate Advisory</h3>
+                        <p>Offering expert guidance on property investments, portfolio optimization, and market entry strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- <section class="quote-section">
         <div class="quote-overlay">
             <blockquote>
                 "Real estate is not just about buildings—it's about building lives, communities, and legacies that endure."
             </blockquote>
             <div class="quote-author">— Sulaiman Abu</div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Stats Section -->
     <section class="stats">
@@ -184,7 +318,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">
-                                <img src="images/Babalola.jpg" alt="Dr Oluwafemi Babalola">
+                                <img src="images/Babalola1.jpg" alt="Dr Oluwafemi Babalola">
                             </div>
                             <div class="author-info">
                                 <h4>Dr Oluwafemi Babalola</h4>

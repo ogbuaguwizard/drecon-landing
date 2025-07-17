@@ -41,7 +41,7 @@
         /* ESG Section Specific Styles */
         .esg-section {
             padding: 60px 0;
-            background-color: var(--brown-light);
+            background-color: var(--dark-grey);
         }
 
         .esg-grid {
@@ -52,7 +52,7 @@
         }
 
         .esg-item {
-            background-color: var(--white);
+            background-color: var(--medium-grey);
             /* border: 1px solid var(--dark-grey); */
             border-radius: 8px;
             padding: 30px;
@@ -68,27 +68,27 @@
 
         .esg-icon {
             font-size: 3.5em;
-            color: var(--emerald-dark);
+            color: var(--brown-dark);
             margin-bottom: 20px;
         }
 
         .esg-item h3 {
             /* font-family: var(--font-heading); */
             font-size: 1.6em;
-            color: var(--emerald-dark);
+            color: var(--white);
             margin-top: 0;
             margin-bottom: 15px;
         }
 
         .esg-item p {
-            /* font-family: var(--font-body); */
+            font-family: var(--font-body);
             font-size: 1em;
-            color: var(--black);
+            color: var(--emerald-light);
             margin-bottom: 0;
         }
 
         .esg-text {
-            background-color: var(--brown-light);
+            background-color: var(--dark-grey);
             border-left: 5px solid var(--emerald-dark);
             padding: 30px;
             border-radius: 8px;
@@ -97,7 +97,7 @@
 
         .esg-text p {
             font-size: 1.1em;
-            color: var(--black);
+            color: var(--white);
             line-height: 1.8;
             margin-bottom: 0;
         }
@@ -119,6 +119,7 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
+                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
@@ -132,36 +133,46 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-work.html">About Work</a></li>
+                        <li class="dropdown">
+                            <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about-work.html#past-work">Past Work</a></li>
+                                <li><a href="about-work.html#current-work">Current Work</a></li>
+                                <li><a href="about-work.html#specialties">Specialties</a></li>
+                            </ul>
+                        </li>
                         <li><a href="publication.html">Publication</a></li>
-                        <li><a href="esg.html" class="active">ESG</a></li>
+                        <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
-                        <!-- <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#testimonials">Testimonials</a></li>
-                        <li><a href="index.html#contact">Contact</a></li> -->
                     </ul>
                     <div class="nav-btn-container">
                         <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
                     </div>
                 </nav>
             </div>
-            
-            <div class="mobile-menu" id="mobile-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-work.html">About Work</a></li>
-                    <li><a href="publication.html">Publication</a></li>
-                    <li><a href="esg.html" class="active">ESG</a></li>
-                    <li><a href="mentorship.html">Mentorship</a></li>
-                    <!-- <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact</a></li> -->
-                </ul>
-                <div class="mobile-menu-btn-container">
-                    <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
-                </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-work.html#past-work">Past Work</a></li>
+                        <li><a href="about-work.html#current-work">Current Work</a></li>
+                        <li><a href="about-work.html#specialties">Specialties</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="esg.html">ESG</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+            </ul>
+            <div class="mobile-menu-btn-container">
+                <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
             </div>
-        </header>
+        </div>
+    </header>
 
     <main>
         <section class="page-hero about-hero">

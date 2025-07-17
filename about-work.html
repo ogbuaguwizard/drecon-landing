@@ -41,7 +41,7 @@
         /* Work Experience Section */
         .work-experience {
             padding: 60px 0;
-            background-color: var(--emerald-dark);
+            /* background-color: var(--emerald-dark); */
         }
 
         .work-content {
@@ -128,13 +128,13 @@
         /* Specialties Section */
         .specialties {
             padding: 60px 0;
-            background-color: var(--brown-light);
+            background-color: var(--dark-grey);
         }
 
         .section-title {
             font-family: var(--font-heading);
             font-size: 2.5em;
-            color: var(--emerald-dark);
+            /* color: var(--emerald-dark); */
             margin-bottom: 30px;
             text-align: center;
             position: relative;
@@ -159,7 +159,7 @@
         }
 
         .specialty-item {
-            background-color: var(--white);
+            background-color: var(--medium-grey);
             padding: 30px;
             border-radius: 8px;
             text-align: center;
@@ -174,14 +174,14 @@
 
         .specialty-item i {
             font-size: 3em;
-            color: var(--emerald-dark);
+            color: var(--brown-dark);
             margin-bottom: 20px;
         }
 
         .specialty-item h3 {
             font-family: var(--font-heading);
             font-size: 1.5em;
-            color: var(--emerald-dark);
+            color: var(--white);
             margin-top: 0;
             margin-bottom: 10px;
         }
@@ -189,7 +189,7 @@
         .specialty-item p {
             font-family: var(--font-body);
             font-size: 0.95em;
-            color: var(--black);
+            color: var(--emerald-light);
         }
 
         @media (max-width: 768px) {
@@ -212,20 +212,28 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
+                    <!-- <div class="logo-icon"></div> -->
                     <div class="logo-text">
                         <div class="logo-main">SULAIMAN ABU</div>
                         <div class="logo-tagline">REAL ESTATE DEVELOPER</div>
                     </div>
                 </div>
-
+                
                 <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
-
+                
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-work.html" class="active">About Work</a></li>
+                        <li class="dropdown">
+                            <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about-work.html#past-work">Past Work</a></li>
+                                <li><a href="about-work.html#current-work">Current Work</a></li>
+                                <li><a href="about-work.html#specialties">Specialties</a></li>
+                            </ul>
+                        </li>
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="esg.html">ESG</a></li>
                         <li><a href="mentorship.html">Mentorship</a></li>
@@ -235,19 +243,28 @@
                     </div>
                 </nav>
             </div>
-
-            <div class="mobile-menu" id="mobile-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-work.html" class="active">About Work</a></li>
-                    <li><a href="publication.html">Publication</a></li>
-                    <li><a href="esg.html">ESG</a></li>
-                    <li><a href="mentorship.html">Mentorship</a></li>
-                </ul>
-                <div class="mobile-menu-btn-container">
-                    <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
-                </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about-work.html">About Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about-work.html#past-work">Past Work</a></li>
+                        <li><a href="about-work.html#current-work">Current Work</a></li>
+                        <li><a href="about-work.html#specialties">Specialties</a></li>
+                    </ul>
+                </li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="esg.html">ESG</a></li>
+                <li><a href="mentorship.html">Mentorship</a></li>
+            </ul>
+            <div class="mobile-menu-btn-container">
+                <button class="btn" type="button"><a href="https://wa.me/2348022396938">Contact Me</a></button>
             </div>
+        </div>
     </header>
 
     <main>
@@ -263,38 +280,42 @@
             <div class="container">
                 <div class="work-content">
                     <!-- <h2 class="section-title">Professional Experience</h2> -->
-                    <h3>Current Roles</h3>
-                    <div class="job-header">
-                        <h4>Cruxstone Development & Investment Ltd.</h4>
-                        <span class="role-meta">Head, Business Development | Jan 2021 - Present | Lagos State, Nigeria</span>
-                    </div>
-                    <p>As Head of Business Development at Cruxstone Development & Investment Ltd., I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
+                    <div id="current-work">
+                        <h3>Current Roles</h3>
+                        <div class="job-header">
+                            <h4>Cruxstone Development & Investment Ltd.</h4>
+                            <span class="role-meta">Head, Business Development | Jan 2021 - Present | Lagos State, Nigeria</span>
+                        </div>
+                        <p>As Head of Business Development at Cruxstone Development & Investment Ltd., I lead strategic initiatives to identify new market opportunities, foster key partnerships, and drive revenue growth. My role involves overseeing the entire sales cycle, from lead generation and qualification to deal closure and post-sale relationship management. I leverage data-driven insights to refine sales strategies and ensure alignment with the company's long-term objectives. A core focus is on expanding our market reach and securing high-value joint ventures and investment projects.</p>
 
-                    <div class="job-header">
-                        <h4>Gapstone Developers</h4>
-                        <span class="role-meta">Head, Business Development and Sales | Nov 2021 - Present | Lekki Peninsula scheme 1, Lagos Nigeria</span>
+                        <div class="job-header">
+                            <h4>Gapstone Developers</h4>
+                            <span class="role-meta">Head, Business Development and Sales | Nov 2021 - Present | Lekki Peninsula scheme 1, Lagos Nigeria</span>
+                        </div>
+                        <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
                     </div>
-                    <p>At Gapstone Developers, I'm responsible for spearheading both business development and sales operations. This involves identifying potential development sites, structuring deals, and managing the sales pipeline for our premium properties. I work closely with cross-functional teams to ensure our projects meet market demands and deliver exceptional value to clients. My efforts contribute directly to the company's growth targets and market positioning in the competitive Lagos real estate landscape.</p>
 
-                    <h3>Previous Experience</h3>
+                    <div id="past-work">
+                        <h3>Previous Experience</h3>
 
-                    <div class="job-header">
-                        <h4>Cruxstone Development & Investment Ltd.</h4>
-                        <span class="role-meta">Senior Investment Advisor | Jan 2020 - Jan 2021 | Nigeria</span>
+                        <div class="job-header">
+                            <h4>Cruxstone Development & Investment Ltd.</h4>
+                            <span class="role-meta">Senior Investment Advisor | Jan 2020 - Jan 2021 | Nigeria</span>
+                        </div>
+                        <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
+
+                        <div class="job-header">
+                            <h4>Brookstone Property</h4>
+                            <span class="role-meta">Sales Executive | Dec 2018 - Dec 2019 | Ikoyi, Lagos</span>
+                        </div>
+                        <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
+
+                        <div class="job-header">
+                            <h4>Wole Ogungbola & Co</h4>
+                            <span class="role-meta">Head of Agency | Jul 2014 - Nov 2016 | Lagos, Nigeria</span>
+                        </div>
+                        <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
                     </div>
-                    <p>As a Senior Investment Advisor, I provided expert guidance to clients on real estate investment opportunities across Nigeria. This involved in-depth market research, financial modeling, and risk assessment to identify high-potential assets. I was responsible for advising on portfolio diversification, property acquisition, and exit strategies, ensuring clients achieved optimal returns on their investments. I also played a key role in structuring complex real estate deals.</p>
-
-                    <div class="job-header">
-                        <h4>Brookstone Property</h4>
-                        <span class="role-meta">Sales Executive | Dec 2018 - Dec 2019 | Ikoyi, Lagos</span>
-                    </div>
-                    <p>At Brookstone Property, I was a key Sales Executive, responsible for driving property sales in the luxury segment. My duties included engaging with high-net-worth clients, conducting property viewings, and skillfully negotiating deals. I consistently met and exceeded sales targets by leveraging strong client relationships and an in-depth understanding of market trends. I also actively participated in lead generation activities and managed a robust sales pipeline.</p>
-
-                    <div class="job-header">
-                        <h4>Wole Ogungbola & Co</h4>
-                        <span class="role-meta">Head of Agency | Jul 2014 - Nov 2016 | Lagos, Nigeria</span>
-                    </div>
-                    <p>As Head of Agency, I led a team responsible for real estate marketing, agency operations, and property management. My role encompassed developing marketing strategies for property listings, overseeing client acquisition, and managing a diverse portfolio of residential and commercial properties. I ensured smooth transactions for buyers and sellers, managed tenant relations, and maintained high occupancy rates for managed properties. I also provided market insights to clients and collaborated on strategic business development.</p>
                 </div>
             </div>
         </section>
@@ -306,32 +327,32 @@
                     <div class="specialty-item">
                         <i class="fas fa-lightbulb"></i>
                         <h3>Project Conceptualization</h3>
-                        <p>Turning visionary ideas into tangible, profitable real estate developments.</p>
+                        <p>Developing innovative ideas and strategies to initiate successful real estate projects from the ground up.</p>
                     </div>
                     <div class="specialty-item">
-                        <i class="fas fa-city"></i>
-                        <h3>Urban Redevelopment</h3>
-                        <p>Transforming existing urban spaces into vibrant and sustainable communities.</p>
+                        <i class="fas fa-search-dollar"></i>
+                        <h3>Feasibility and Viability Appraisal</h3>
+                        <p>Conducting thorough market and financial analyses to assess the practicality and profitability of development proposals.</p>
                     </div>
                     <div class="specialty-item">
-                        <i class="fas fa-handshake-alt"></i>
+                        <i class="fas fa-handshake"></i>
                         <h3>Joint Venture Structuring</h3>
-                        <p>Creating mutually beneficial partnerships for complex development projects.</p>
+                        <p>Designing and negotiating collaborative partnerships that align interests and optimize project outcomes.</p>
                     </div>
                     <div class="specialty-item">
-                        <i class="fas fa-chart-pie"></i>
-                        <h3>Financial Projections & Analysis</h3>
-                        <p>Developing robust financial models to ensure project viability and maximize returns.</p>
+                        <i class="fas fa-calculator"></i>
+                        <h3>Real Estate Financial Modelling</h3>
+                        <p>Building detailed financial models to forecast returns, manage risks, and support investment decisions.</p>
                     </div>
                     <div class="specialty-item">
-                        <i class="fas fa-vector-square"></i>
-                        <h3>Design Creation & Oversight</h3>
-                        <p>Guiding architectural design to blend aesthetics with functionality and market appeal.</p>
+                        <i class="fas fa-tasks"></i>
+                        <h3>Project Management</h3>
+                        <p>Overseeing project execution, coordinating teams, and ensuring timely delivery within budget and quality standards.</p>
                     </div>
                     <div class="specialty-item">
-                        <i class="fas fa-balance-scale"></i>
-                        <h3>Real Estate Investment Advisory</h3>
-                        <p>Providing strategic advice for high-yield property investments.</p>
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Real Estate Advisory</h3>
+                        <p>Offering expert guidance on property investments, portfolio optimization, and market entry strategies.</p>
                     </div>
                 </div>
             </div>
