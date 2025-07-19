@@ -901,8 +901,31 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for animations
+            const animatableElements = document.querySelectorAll('.animatable');
+
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // element is 10% visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            animatableElements.forEach(element => {
+                observer.observe(element);
+            });
 
             // Carousel functionality
             document.querySelectorAll('.image-carousel').forEach(carousel => {
@@ -1016,6 +1039,5 @@
             });
         });
     </script>
-    <script src="js/script.js"></script>
 </body>
 </html>
